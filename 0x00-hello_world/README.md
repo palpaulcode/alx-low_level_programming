@@ -26,3 +26,9 @@ using function `puts` followed by a new line.
 ## File 5-printf.c
 A `C` program that prints a string of characters 
 followed by a new line using function `printf`.
+
+## File 6-size.c
+Prints the size of various data types it is 
+compiled and  run on in the computer.
+
+
