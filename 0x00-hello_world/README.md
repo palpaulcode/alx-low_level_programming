@@ -31,4 +31,8 @@ followed by a new line using function `printf`.
 Prints the size of various data types it is 
 compiled and  run on in the computer.
 
+## File 100-intel
+This script generates the assembly code of C code
+using Intel syntax. The C file name is saved in 
+variable `$CFILE`. 
 
