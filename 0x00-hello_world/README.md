@@ -36,3 +36,7 @@ This script generates the assembly code of C code
 using Intel syntax. The C file name is saved in 
 variable `$CFILE`. 
 
+## File 101-quote.c
+Prints exactly `and that piece of art is useful" - Dora Korpar, 2015-10-19`, followed by a new line, to the standard error. Does not use any functions listed in the NAME section of the man (3) `printf` or man (3) `puts`. Program returns 1.
+
+
