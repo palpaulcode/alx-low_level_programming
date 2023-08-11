@@ -22,3 +22,8 @@ The output of the program should be:
 
 ## File 2-print_alphabet.c
 Prints the alphabet in lowercase, followed by a new line.
+
+## File 3-print_alphabets.c
+Prints the aplhabet in lowercase, and then in uppercase, fllowed by a new line.
+
+
