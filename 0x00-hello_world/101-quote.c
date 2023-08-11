@@ -4,7 +4,7 @@
 /**
  * main - Entry point
  *
- * Description: Prints a string of characters followed 
+ * Description: Prints a string of characters followed
  * by newline to standard error
  *
  * Return: Always 1 (Error)
