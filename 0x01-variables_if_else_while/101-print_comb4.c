@@ -12,17 +12,22 @@ int main(void)
 {
 	int i;
 	int j;
+	int k;
 
 	for (i = 48; i <= 57; i++)
 	{
-		for (j = 48 + 1; j <= 57 ; j++)
+		for (j = 48 + 1; j <= 57; j++)
 		{
-			if (i != j) 
+			for (k = 48 + 2; k <= 57; k++)
 			{
-				putchar(i);
-				putchar(j);
-				putchar(44); /* comma */
-				putchar(32); /* space */
+				if ((i != j)  )
+				{
+					putchar(i);
+					putchar(j);
+					putchar(k);
+					putchar(44); /* comma */
+					putchar(32); /* space */
+				}
 			}
 		}
 	}
