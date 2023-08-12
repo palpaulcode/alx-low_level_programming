@@ -12,18 +12,16 @@ int main(void)
 {
 	int i;
 	int j;
-
-	for (i = 48; i <= 57; i++)
+	for (i = 0; i < 9; i++)
 	{
-		for (j = 48 + 1; j <= 57 ; j++)
+		for (j = i + 1; j < 10; j++)
 		{
-			if (i != j) 
-			{
-				putchar(i);
-				putchar(j);
-				putchar(44); /* comma */
-				putchar(32); /* space */
-			}
+			putchar((i % 10) + '0');
+			putchar((j % 10) + '0');
+			if (i == 8 && j == 9)
+				continue;
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	putchar('\n');
