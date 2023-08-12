@@ -11,13 +11,13 @@
 
 int main(void)
 {
-	int i;
+	char i;
 
-	i = 97;
+	i = 'a';
 
-	while (i <= 122)
+	while (i <= 'z')
 	{
-		if ((i != 101) || (i != 113))
+		if ((i != 'e') && (i != 'q'))
 			putchar(i);
 		i++;
 	}
