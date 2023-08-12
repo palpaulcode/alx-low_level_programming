@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Description: prints the alphabet from a to z in lowercase
+ * Description: prints the alphabet from a to z in lowercase except q and e
  * followed by a new line
  *
  * Return: Always 0 (Success)
@@ -11,15 +11,15 @@
 
 int main(void)
 {
-	char xter;
+	int i;
 
-	xter = 'a';
+	i = 97;
 
-	while (xter <= 'z')
+	while (i <= 122)
 	{
-		if (xter != 'e' || xter != 'q')
-			putchar(xter);
-		xter++;
+		if ((i != 101) || (i != 113))
+			putchar(i);
+		i++;
 	}
 
 	putchar('\n');
