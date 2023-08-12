@@ -14,15 +14,20 @@ int main(void)
 	int i;
 	int j;
 
-	for (i = 48; i <= 57; i++)
+	for (i = 0; i <= 98; i++)
 	{
-		for (j = 48 + 1; j <= 57 ; j++)
+		for (j = i + 1 ; j <= 99; j++)
 		{
-			putchar(i);
-			putchar(j);
-			if (j % 2)
-				putchar(44); /* comma */
-			putchar(32); /* space */
+			putchar((i / 10) + '0');
+			putchar((i % 10) + '0');
+			putchar(' ');
+			putchar((j / 10) + '0');
+			putchar((j % 10) + '0');
+
+			if (i == 98 && j == 99)
+				continue; 
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	putchar('\n');
