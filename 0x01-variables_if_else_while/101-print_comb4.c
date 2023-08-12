@@ -14,20 +14,19 @@ int main(void)
 	int j;
 	int k;
 
-	for (i = 48; i <= 57; i++)
+	for (i = 0; i < 8; i++)
 	{
-		for (j = 48 + 1; j <= 57; j++)
+		for (j = i + 1; j < 9; j++)
 		{
-			for (k = 48 + 2; k <= 57; k++)
+			for (k = j + 1; k < 10; k++)
 			{
-				if (i != j)
-				{
-					putchar(i);
-					putchar(j);
-					putchar(k);
-					putchar(44); /* comma */
-					putchar(32); /* space */
-				}
+				putchar((i % 10) + '0');
+				putchar((j % 10) + '0');
+				putchar((k % 10) + '0');
+				if (i == 7 && j == 8 && k == 9)
+					continue;
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
