@@ -20,20 +20,19 @@ void times_table(void)
 		c = 1;
 		while (c < 10)
 		{
-		 	r = c * l;		/* result from multiplication */
+			r = c * l;		/* result from multiplication */
 
 			_putchar(44);
 			_putchar(32);
 
-			if (r < 9)
-			       _putchar(' ');	/* append a space before values less than 10 */
+			if (r < 10)
+				_putchar(' ');	/* append a space before values less than 10 */
 			else
-			       _putchar((r / 10) + '0');
+				_putchar((r / 10) + '0');
 
 			_putchar((r % 10) + '0');
 
 			c++;
-			
 		}
 		_putchar('\n');
 		l++;
