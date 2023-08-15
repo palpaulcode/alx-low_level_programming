@@ -18,3 +18,6 @@ Function `int print_sign(int)` in this code prints the sign of a number; + for p
 
 ## File 6-abs.c
 Contains a function, `int _abs(int)` that computes and returns the absolute value of a number.
+
+## File 7-print_last_digit.c
+Contains function `int print_last_digit(int)` that prints the last digit of a number passed to it.
