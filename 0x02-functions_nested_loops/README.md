@@ -21,3 +21,10 @@ Contains a function, `int _abs(int)` that computes and returns the absolute valu
 
 ## File 7-print_last_digit.c
 Contains function `int print_last_digit(int)` that prints the last digit of a number passed to it.
+
+## File 8-24_hours.c
+This file contains function `void jack_bauer(void)` that prints minutes of the day from 00:00 to 23:59
+
+
+
+
