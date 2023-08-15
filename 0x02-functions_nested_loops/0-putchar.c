@@ -16,7 +16,7 @@ int main(void)
 
 	len = strlen(c);
 
-	while(i <= len)
+	while(i < len)
 	{
 		_putchar(c[i]);
 		i++;
