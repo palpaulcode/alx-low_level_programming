@@ -12,7 +12,10 @@ void jack_bauer(void)
 	int m;		/* Minutes */
 
 	h = 0;
-	/*m = 0; This variable cannot be kept here lest the loop won't work correctly*/
+	/**
+	 *  m = 0; This variable cannot be kept here
+	 *  lest the loop won't work correctly
+	 */
 
 	while (h < 24)
 	{
