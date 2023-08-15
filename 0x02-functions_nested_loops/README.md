@@ -16,4 +16,5 @@ This code contains a function, `int _isalpha(int c)`, that checks whether the in
 ## File 5-sign.c
 Function `int print_sign(int)` in this code prints the sign of a number; + for positive, - for negative, 0 for zero.
 
-
+## File 6-abs.c
+Contains a function, `int _abs(int)` that computes and returns the absolute value of a number.
