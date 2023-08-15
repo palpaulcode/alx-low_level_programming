@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * print_to_98 - prints numbers 
+ * print_to_98 - prints numbers
  * @n: number to start printing from
  *
  * Description: function takes an int parameter and
@@ -18,7 +18,7 @@ void print_to_98(int n)
 		for (; n <= 98; n++)
 		{
 			printf("%d", n);
-			if(n < 98)
+			if (n < 98)
 				printf(", ");
 		}
 		printf("\n");
