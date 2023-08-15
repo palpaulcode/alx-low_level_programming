@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "_putchar.c"
+#include "main.h"
 #include <string.h>
 
 /**
@@ -8,8 +8,6 @@
  *
  * Return: return 0 for success
  */
-
-int _putchar(char);
 
 int main(void)
 {
@@ -23,5 +21,6 @@ int main(void)
 		_putchar(c[i]);
 		i++;
 	}
+	_putchar('\n');
 	return (0);
 }
