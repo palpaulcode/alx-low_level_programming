@@ -28,5 +28,7 @@ This file contains function `void jack_bauer(void)` that prints minutes of the d
 ## File 9-times_table.c
 Contains function `void times_table(void)` which prints the 9 times table starting with 0.
 
+## File 10-add.c
+Has function `int add(int, int)` that adds two numbers and returns their sum.
 
 
