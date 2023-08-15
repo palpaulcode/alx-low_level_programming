@@ -25,6 +25,8 @@ Contains function `int print_last_digit(int)` that prints the last digit of a nu
 ## File 8-24_hours.c
 This file contains function `void jack_bauer(void)` that prints minutes of the day from 00:00 to 23:59
 
+## File 9-times_table.c
+Contains function `void times_table(void)` which prints the 9 times table starting with 0.
 
 
 
