@@ -31,4 +31,7 @@ Contains function `void times_table(void)` which prints the 9 times table starti
 ## File 10-add.c
 Has function `int add(int, int)` that adds two numbers and returns their sum.
 
+## File 11-print_to_98.c
+Has a function called `void print_to_98(int n)`. Prints numbers from a given starting number passed as argument to 98. If the parameter is greater than 98, prints from the value of the parameter decrementing by one value until it prints 98 and then stops. If the parameter is less that 98, it prints from the value of the parameter incrementing by one up to 98.
+
 
