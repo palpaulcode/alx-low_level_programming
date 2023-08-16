@@ -39,7 +39,6 @@ void fibonacci(int num)
 
 int main(void)
 {
-	printf("0, 1, ");
 	fibonacci(50 - 2);
 	return (0);
 }
