@@ -11,8 +11,8 @@ void fibonacci(int num)
 	static long int f1;
 	static long int f2 = 1;
 	static long int fib;
-
 	int counter = 0;
+
 	f1 = 0;
 
 	while (counter < num)
