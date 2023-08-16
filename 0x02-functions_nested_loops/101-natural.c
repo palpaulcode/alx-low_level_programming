@@ -3,7 +3,7 @@
 
 /**
  * sum_multiples_of_3_and_5 - find sum of multiples of 3 and 5 below 1024
- * 
+ *
  * Return: has void return type
  */
 
@@ -20,4 +20,16 @@ void sum_multiples_of_3_and_5(void)
 
 	printf("%d\n", sum);
 
+}
+
+/**
+ * main -Entry point to the program
+ *
+ * Return: returns 0 (Success)
+ */
+
+int main(void)
+{
+	sum_multiples_of_3_and_5(void);
+	return (0);
 }
