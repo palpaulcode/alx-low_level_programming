@@ -42,3 +42,7 @@ Prints the first 50 fibonacci numbers
 
 ## File 103-fibonacci.c
 Prints the sum of fibonacci numbers whose values does not exceed 4,000,000.
+
+## File 104-fibonacci.c
+Prints the first 98 Fibonacci numbers
+
