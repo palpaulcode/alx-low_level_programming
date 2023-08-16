@@ -36,3 +36,8 @@ Has a function called `void print_to_98(int n)`. Prints numbers from a given sta
 
 ## File 100-times_table.c
 File has function called `void print_times_table(int n)` that prints the times table of a given number provided the number is not greater than 15 and not less than 0.
+
+## File 102-fibonacci.c
+Prints the first 50 fibonacci numbers
+
+
