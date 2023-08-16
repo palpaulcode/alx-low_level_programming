@@ -40,4 +40,5 @@ File has function called `void print_times_table(int n)` that prints the times t
 ## File 102-fibonacci.c
 Prints the first 50 fibonacci numbers
 
-
+## File 103-fibonacci.c
+Prints the sum of fibonacci numbers whose values does not exceed 4,000,000.
