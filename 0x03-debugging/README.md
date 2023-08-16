@@ -7,4 +7,7 @@ File 0-main.c tests that function `positive_or_negative()` contained in a separa
 ## File 1-main.c
 Comment out part of the code causing the output to go into an infinite loop.
 
+## Files 2-largest_number.c, main.h
+Fix code in `2-largest_number.c` so that it correctly prints out the largest of three numbers.
+
 

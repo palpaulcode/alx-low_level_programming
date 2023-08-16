@@ -10,17 +10,22 @@
 0x00-hello_world/main.c
 
 # This file is in directory 0x02-functions_nested_loops
-_putchar.c
+0x02-functions_nested_loops/_putchar.c
 
 # ignore testdir in directory 0x02-functions_nested_loops
 testdir/
 
-# if, for example, you ignore all .md files as below
+# if, for example, you ignore all .md files as below.md
 .md
 
 # This is how to tell git not to ignore a file that is in some ignore pattern
 # This does  not work if the file is in a ignored directory
 !README.md
+
+# ignore file 2-main.c in 0x03-debugging
+0x03-debugging/2-main.c
+
+# MORE ON GIT IGNORE BELOW
 
 # you cannot negate a file inside an ignored directory like
 # trying to negae a file inside an ignored directory won't work
