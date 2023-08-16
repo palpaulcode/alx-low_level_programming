@@ -15,6 +15,9 @@
 # ignore testdir in directory 0x02-functions_nested_loops
 testdir/
 
+# ignore file 3-main_a.c in directory 0x03-debugging
+0x03-debugging/3-main_a.c
+
 # if, for example, you ignore all .md files as below.md
 .md
 
