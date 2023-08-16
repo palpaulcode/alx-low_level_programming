@@ -30,6 +30,6 @@ void sum_multiples_of_3_and_5(void)
 
 int main(void)
 {
-	sum_multiples_of_3_and_5(void);
+	sum_multiples_of_3_and_5();
 	return (0);
 }
