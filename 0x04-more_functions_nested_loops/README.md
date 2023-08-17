@@ -19,4 +19,7 @@ Function that prints numbers from 0 to 9 and skips 2 and 4
 ## File `5-more_numbers.c`
 Function that prints numbers from 0 to 14 ten times.
 
+## File `6-print_line`
+Prints a straight line on the terminal.
+
 
