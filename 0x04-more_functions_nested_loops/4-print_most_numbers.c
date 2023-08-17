@@ -15,7 +15,7 @@ void print_most_numbers(void)
 
 	while (num <= 57)
 	{
-		if (num != 50 || num != 52)
+		if (num != 50 && num != 52)
 			_putchar(num);
 		num++;
 	}
