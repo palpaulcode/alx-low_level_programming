@@ -28,4 +28,7 @@ Contains a function that prints diagonal line on the screen
 ## File `8-print_square.c`
 Has function `void print_square(int n)` that prints a square of '#'
 
+## File `9-fizz_buzz.c`
+Print the famous "Fizz-Buzz test".
+
 
