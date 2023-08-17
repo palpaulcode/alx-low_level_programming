@@ -10,15 +10,17 @@
 void print_square(int n)
 {
 	int len = 0, sq;
+
 	if (n <= 0)
 	{
 		_putchar('\n');
 	}
-	else{
+	else
+	{
 		while (len < n)
 		{
 			sq = 0;
-	
+
 			for (; sq < n; sq++)
 			{
 				_putchar(35);
