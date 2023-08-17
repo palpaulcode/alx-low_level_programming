@@ -24,3 +24,8 @@ Prints a straight line on the terminal.
 
 ## File `7-print_diagonal.c`
 Contains a function that prints diagonal line on the screen
+
+## File `8-print_square.c`
+Has function `void print_square(int n)` that prints a square of '#'
+
+
