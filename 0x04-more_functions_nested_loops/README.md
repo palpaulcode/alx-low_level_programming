@@ -22,4 +22,5 @@ Function that prints numbers from 0 to 14 ten times.
 ## File `6-print_line`
 Prints a straight line on the terminal.
 
-
+## File `7-print_diagonal.c`
+Contains a function that prints diagonal line on the screen
