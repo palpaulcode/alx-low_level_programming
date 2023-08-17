@@ -7,7 +7,7 @@
  * Return: returns a 1 for digit character and 0 otherwise
  */
 
-int _isupper(int c)
+int _isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 	{
