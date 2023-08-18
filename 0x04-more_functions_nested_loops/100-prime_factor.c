@@ -60,7 +60,7 @@ long int prime_factors(long int n)
 			while (x % i == 0)
 			{
 				/* print the primes as they are calculated*/
-				printf("%ld ", i); 
+				printf("%ld ", i);
 				largest = i; /* the last prime is assigned */
 				x /= i;
 			}
