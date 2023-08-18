@@ -9,7 +9,7 @@
 
 void print_triangle(int n)
 {
-	int len = 0, space;
+	int len = 1, space;
 
 	if (n <= 0)
 	{
@@ -17,7 +17,7 @@ void print_triangle(int n)
 	}
 	else
 	{
-		while (len < n + 1)
+		while (len <= n)
 		{
 			for (space = n - len; space > 0; space--)
 			{
