@@ -31,4 +31,5 @@ Has function `void print_square(int n)` that prints a square of '#'
 ## File `9-fizz_buzz.c`
 Print the famous "Fizz-Buzz test".
 
-
+## File `10-print_triangle.c`
+Contains a function that prints a triangle of a given size using # characters
