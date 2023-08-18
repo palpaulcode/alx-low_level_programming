@@ -30,7 +30,9 @@ int main(void)
 
 long int isprime(long int n)
 {
-	for (int i = 2; i < sqrt(n); i++)
+	int i;
+
+	for (i = 2; i < sqrt(n); i++)
 	{
 		if (n % i == 0)
 			return (0);
@@ -47,8 +49,9 @@ long int isprime(long int n)
 long int prime_factors(long int n)
 {
 	long int largest;
+	long int i;
 
-	for (long int i = 2; i < n; i++)
+	for (i = 2; i < n; i++)
 	{
 		if (isprime(i) == 1)
 		{
