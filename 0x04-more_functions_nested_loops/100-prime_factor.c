@@ -2,9 +2,9 @@
 #include <math.h>
 
 
-int isprime(long int);
+int isprime(int);
 
-long int prime_factors(long int);
+int prime_factors(int);
 
 /**
  * main - Entry point to the program
@@ -14,9 +14,9 @@ long int prime_factors(long int);
 
 int main(void)
 {
-	long int largest = prime_factors(612852475143);
+	int largest = prime_factors(1231952);
 
-	printf("%lx\n", largest);
+	printf("%d\n", largest);
 
 	return (0);
 }
@@ -28,7 +28,7 @@ int main(void)
  * Return: returns 0 if number is prime and 1 if not
  */
 
-int isprime(long int n)
+int isprime(int n)
 {
 	int i;
 
@@ -46,21 +46,21 @@ int isprime(long int n)
  *
  * Return: returns the largest prime factor
  */
-long int prime_factors(long int n)
+int prime_factors(int n)
 {
-	long int largest;
-	long int i;
+	int largest;
+	int i;
 
 	for (i = 2; i < n; i++)
 	{
 		if (isprime(i) == 1)
 		{
-			long int x = n;
+			int x = n;
 
 			while (x % i == 0)
 			{
 				/* print the primes as they are calculated*/
-				printf("%ld ", i);
+				printf("%d ", i);
 				largest = i; /* the last prime is assigned */
 				x /= i;
 			}
