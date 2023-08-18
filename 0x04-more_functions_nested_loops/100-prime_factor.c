@@ -14,7 +14,7 @@ long int prime_factors(long int);
 
 int main(void)
 {
-	long int largest = prime_factors(1231952);
+	long int largest = prime_factors(612852475143);
 
 	printf("%ld\n", largest);
 
