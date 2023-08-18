@@ -33,3 +33,8 @@ Print the famous "Fizz-Buzz test".
 
 ## File `10-print_triangle.c`
 Contains a function that prints a triangle of a given size using # characters
+
+## File `100-prime_factor.c`
+This program finds the largest prime factor of a given number and prints it.
+
+
