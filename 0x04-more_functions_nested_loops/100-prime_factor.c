@@ -16,7 +16,9 @@ int main(void)
 {
 	long int largest = prime_factors(612852475143);
 
-	printf("%lx\n", largest);
+	/* long int largest = prime_factors(1231952); */
+
+	printf("%ld\n", largest);
 
 	return (0);
 }
@@ -62,7 +64,7 @@ long int prime_factors(long int n)
 			while (x % i == 0)
 			{
 				/* print the primes as they are calculated*/
-				printf("%lx", i);
+				/* printf("Primes: %ld\n", i); */
 				largest = i; /* the last prime is assigned */
 				x /= i;
 			}
