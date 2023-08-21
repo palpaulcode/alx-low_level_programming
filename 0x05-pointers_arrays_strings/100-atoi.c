@@ -19,14 +19,18 @@ int _atoi(char *s)
 		sign = -1;
 		i++;
 	}
+	else if (s[0] == '+')
+	{
+		i++;
+	}
 
-	while (s[i])
+	/* convert digit ot integer values */
+	for (; s[i] != '\0'; i++)
 	{
 		if (s[i] < '0' || s[i] > '9')
-			return 0;
+			break;
 
-		res = res * 10 + s[i] - '0';
-		i++;
+		res = res * 10 + (s[i] - '0');
 	}
 	res *= sign;
 
