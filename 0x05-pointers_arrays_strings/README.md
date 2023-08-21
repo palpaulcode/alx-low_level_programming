@@ -25,4 +25,7 @@ Print characters of a string at even positions
 ## File `7-puts_half.c`
 Prints the second half of a string
 
+## File `8-print_array.c`
+Prints n elements of an array of integers
+
 
