@@ -21,3 +21,8 @@ Reverses a string
 
 ## File `6-puts2.c`
 Print characters of a string at even positions
+
+## File `7-puts_half.c`
+Prints the second half of a string
+
+
