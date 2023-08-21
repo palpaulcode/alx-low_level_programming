@@ -12,7 +12,7 @@ void rev_string(char *s)
 	int i = 0;
 	char tmp;
 	char *start;
-        char *end = s;
+	char *end = s;
 
 	arrlen = 1;
 	while (s[arrlen] != '\0')
@@ -23,7 +23,7 @@ void rev_string(char *s)
 
 	start = s;
 	/* printf("Size:%d\n", arrlen); */
-	while(i < (arrlen / 2))
+	while (i < (arrlen / 2))
 	{
 		tmp = *end;
 		*end = *start;
@@ -31,5 +31,5 @@ void rev_string(char *s)
 		i++;
 		start++;
 		end--;
-	}	
+	}
 }
