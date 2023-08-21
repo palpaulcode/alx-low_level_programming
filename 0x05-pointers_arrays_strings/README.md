@@ -10,4 +10,7 @@ Function that swaps the value of two variables passed as pointers
 ## File `2-strlen.c`
 Returns the length of a string
 
+## File `3-puts.c`
+A function that prints a string followed by a new line
+
 
