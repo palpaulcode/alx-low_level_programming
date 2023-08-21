@@ -16,4 +16,5 @@ A function that prints a string followed by a new line
 ## File `4-print_rev.c`
 Print a string in reverse followed by a new line
 
-
+## File `5-rev_string.c`
+Reverses a string
