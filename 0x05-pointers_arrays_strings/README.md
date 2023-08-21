@@ -6,3 +6,8 @@ Resets the value of a pointer passed as a fucntion parameter to 98.
 
 ## File `1-swap.c`
 Function that swaps the value of two variables passed as pointers
+
+## File `2-strlen.c`
+Returns the length of a string
+
+
