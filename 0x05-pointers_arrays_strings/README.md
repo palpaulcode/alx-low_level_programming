@@ -13,4 +13,7 @@ Returns the length of a string
 ## File `3-puts.c`
 A function that prints a string followed by a new line
 
+## File `4-print_rev.c`
+Print a string in reverse followed by a new line
+
 
