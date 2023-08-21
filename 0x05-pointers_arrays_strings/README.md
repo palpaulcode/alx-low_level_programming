@@ -18,3 +18,6 @@ Print a string in reverse followed by a new line
 
 ## File `5-rev_string.c`
 Reverses a string
+
+## File `6-puts2.c`
+Print characters of a string at even positions
