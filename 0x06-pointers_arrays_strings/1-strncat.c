@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 /**
- * _strcat - concatenates two strings
+ * _strncat - concatenates two strings
  * Description: removes the terminating null byte from the
  * first string, appends the second string and adds the
  * terminating null byte
