@@ -3,7 +3,7 @@
 /**
  * _strcat - concatenates two strings
  * Description: removes the terminating null byte from the
- * first string, appends the second string and adds the 
+ * first string, appends the second string and adds the
  * terminating null byte
  * @dest: the first string to contenate the second one to
  * @src: the second string
@@ -19,11 +19,11 @@ char *_strcat(char *dest, char *src)
 	{
 		n++;
 	}
-	
+
 	i = 0;
 	while (src[i] != '\0')
 	{
-		dest[n] = src[i]; 
+		dest[n] = src[i];
 		i++;
 		n++;
 	}
