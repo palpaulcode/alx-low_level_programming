@@ -4,7 +4,7 @@
  * Description: does not use builtin functions,
  * uses function '_putchar'
  * @n: the number to print
- * 
+ *
  * Return: has no return value
  */
 void print_number(int n)
