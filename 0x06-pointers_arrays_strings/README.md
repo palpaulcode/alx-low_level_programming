@@ -10,4 +10,4 @@ Concatenates n byttes from string 2 to string 1
 ## File `2-strncpy.c`
 Copies n bytes of a string to a buffer and returns the buffer
 
-
+##
