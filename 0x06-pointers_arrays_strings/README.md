@@ -19,4 +19,7 @@ Reverses the values of an integer array
 ## File `5-string_toupper.c`
 Translates a string from lowercase to uppercase
 
+## File `6-cap_string.c`
+Capitalizes the first letter of all words in a string
+
 
