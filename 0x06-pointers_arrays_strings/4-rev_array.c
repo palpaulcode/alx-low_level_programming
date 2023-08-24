@@ -1,7 +1,7 @@
 /**
  * reverse_array - reverses the elements of an int array
  * @a: int array
- * @n: length of the array 
+ * @n: length of the array
  *
  * Return: has void return type
  */
@@ -18,7 +18,5 @@ void reverse_array(int *a, int n)
 		a[j--] = tmp;
 		i++;
 	}
-
-	return;
 }
 
