@@ -22,4 +22,5 @@ Translates a string from lowercase to uppercase
 ## File `6-cap_string.c`
 Capitalizes the first letter of all words in a string
 
-
+## File `7-leet.c`
+Encodes a string into 1337 - leet
