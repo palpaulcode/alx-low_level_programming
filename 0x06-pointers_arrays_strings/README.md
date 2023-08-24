@@ -13,4 +13,5 @@ Copies n bytes of a string to a buffer and returns the buffer
 ## File `3-strcmp.c`
 Compares two string. returns an integer less, than, equal to, or grater than zero if s1if found, respectively, to be less than, to match, or be greater than s2.
 
-
+## File `4-rev_array.c`
+Reverses the values of an integer array
