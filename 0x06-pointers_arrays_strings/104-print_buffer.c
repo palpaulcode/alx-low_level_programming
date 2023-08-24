@@ -26,7 +26,7 @@ void print_buffer(char *b, int size)
 					putchar(' ');
 				/* hex content (2 chars) of buffer 2 bytes at a time ...*/
 				if (j + i > size - 1)
-					putchar(' '); /* ... separated by space */
+					printf("  "); /* ... separated by space */
 				else
 					printf("%.2x", b[j + i]);
 			}
