@@ -16,3 +16,7 @@ Compares two string. returns an integer less, than, equal to, or grater than zer
 ## File `4-rev_array.c`
 Reverses the values of an integer array
 
+## File `5-string_toupper.c`
+Translates a string from lowercase to uppercase
+
+
