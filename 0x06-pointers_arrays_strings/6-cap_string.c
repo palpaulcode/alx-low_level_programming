@@ -20,6 +20,10 @@ char *cap_string(char *p)
 		{
 			j = 0;
 			k = 0;
+
+			if (i == 0)
+				p[i] = p[i] - 32;
+
 			while (j < 13)
 			{
 				if (p[i - 1] == st[1])
