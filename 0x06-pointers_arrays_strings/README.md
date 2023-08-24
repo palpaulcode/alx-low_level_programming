@@ -36,3 +36,6 @@ Modify one line in the provided code to print 98.
 
 ## File `103-infinite_add.c`
 Contains a function that adds two big numbers
+
+## File `104-print_buffer.c`
+Contains a function that prints a buffer
