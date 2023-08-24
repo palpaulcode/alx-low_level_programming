@@ -11,7 +11,7 @@ void print_buffer(char *b, int size)
 
 	if (size <= 0) /* if size is 0 or less, print new line only */
 	{
-		putchar('\n');
+		printf("\n");
 	}
 	else
 	{
@@ -23,14 +23,14 @@ void print_buffer(char *b, int size)
 			for (j = 0; j < 10; j++)
 			{
 				if (j % 2 == 0 && j > 0)
-					putchar(' ');
+					printf(" ");
 				/* hex content (2 chars) of buffer 2 bytes at a time ...*/
 				if (j + i > size - 1)
-					printf("  "); /* ... separated by space */
+					printf("  "); /* if no value print 2 spaces */
 				else
 					printf("%.2x", b[j + i]);
 			}
-			printf(" ");
+			printf(" "); /* ... separated by space */
 			for (j = 0; j < 10; j++)
 			{
 				if (j + i > size - 1)
@@ -39,9 +39,9 @@ void print_buffer(char *b, int size)
 				if (b[j + i] >= ' ' && b[j + i] <= '~')
 					putchar(b[j + i]);
 				else
-					putchar('.');
+					printf("."); /* putchar('.'); */
 			}
-			putchar('\n'); /* each line ends with '\n' */
+			printf("\n"); /* each line ends with '\n' */
 		}
 	}
 }
