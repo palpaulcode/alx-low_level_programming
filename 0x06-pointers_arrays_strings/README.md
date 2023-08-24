@@ -24,3 +24,9 @@ Capitalizes the first letter of all words in a string
 
 ## File `7-leet.c`
 Encodes a string into 1337 - leet
+
+## File `100-rot13.c`
+Encodes a string of text utilizing rot13 encryption.
+
+## File `101-print_number.c`
+Contains a function that prints integers using function `_putchar`
