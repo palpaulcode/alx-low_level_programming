@@ -10,4 +10,7 @@ Concatenates n byttes from string 2 to string 1
 ## File `2-strncpy.c`
 Copies n bytes of a string to a buffer and returns the buffer
 
-##
+## File `3-strcmp.c`
+Compares two string. returns an integer less, than, equal to, or grater than zero if s1if found, respectively, to be less than, to match, or be greater than s2.
+
+
