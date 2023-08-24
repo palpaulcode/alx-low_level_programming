@@ -1,9 +1,8 @@
 #include <stdio.h>
 /**
  * print_buffer - prints buffer
- * @b: buffer 
+ * @b: buffer
  * @size: bytes of buffer pointed by b
- *
  * Return: returns void
  */
 void print_buffer(char *b, int size)
@@ -20,13 +19,12 @@ void print_buffer(char *b, int size)
 		for (; i < size; i += 10)
 		{
 			/* first byte of each line in hex (8 chars) */
-			printf("%08x: ", i); 
+			printf("%08x: ", i);
 			for (j = 0; j < 10; j++)
 			{
-				if(j % 2 == 0 && j > 0)
+				if (j % 2 == 0 && j > 0)
 					printf(" ");
-				/* each line shows hex content (2 chars) of 
-				   buffer 2 bytes at a time ... */
+				/* hex content (2 chars) of buffer 2 bytes at a time ...*/
 				if (j + i > size - 1)
 					printf(" "); /* ... separated by space */
 				else
@@ -35,11 +33,10 @@ void print_buffer(char *b, int size)
 			printf(" ");
 			for (j = 0; j < 10; j++)
 			{
-				if (j + i > size -1)
+				if (j + i > size - 1)
 					break;
-				/* if byte is printable character, print 
-				   the letter, if not, print . */
-				if(b[j + i] >= ' ' && b[j + i] <= '~')
+				/* if printable character, print, if not, print . */
+				if (b[j + i] >= ' ' && b[j + i] <= '~')
 					printf("%c", b[j + i]);
 				else
 					printf(".");
