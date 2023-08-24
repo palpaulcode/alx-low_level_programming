@@ -30,3 +30,8 @@ Encodes a string of text utilizing rot13 encryption.
 
 ## File `101-print_number.c`
 Contains a function that prints integers using function `_putchar`
+
+## File `102-magic.c`
+Modify one line in the provided code to print 98.
+
+
