@@ -13,4 +13,5 @@ Locates a character `c` in a string `s` and returns pointer to it or returns `NU
 ## File `3-strspn.c`
 Gets the length of a prefix substring
 
-
+## File `4-strpbrk.c`
+Function that searches a string for any of a set of bytes.
