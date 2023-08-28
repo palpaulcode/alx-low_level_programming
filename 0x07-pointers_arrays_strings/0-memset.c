@@ -1,3 +1,4 @@
+#include <string.h>
 /**
  * _memset - fills memory with constant byte
  * @s: starting address of memory to be filled
@@ -8,7 +9,7 @@
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-	int i;
+	int i = 0;
 
 	while (s[i] != '\0')
 	{
