@@ -25,4 +25,5 @@ Prints a chessboard
 ## File `8-print_diagsums.c`
 Function that prints the sun=m of the two diagonals of a swuare matrix of integers.
 
-
+## File `100-set_string.c`
+Sets the value of a pointer to a char
