@@ -22,4 +22,7 @@ Cotains a function `_strstr()` that finds the first occurence of the substring `
 ## File `7-print_chessboard.c`
 Prints a chessboard
 
+## File `8-print_diagsums.c`
+Function that prints the sun=m of the two diagonals of a swuare matrix of integers.
+
 
