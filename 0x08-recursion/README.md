@@ -5,12 +5,15 @@ This repository contains coding tasks on recursion in C programming in the ALX_S
 Contains a function that prints a string followed by a new line
 
 ## File `1-print_rev_recursion.c`
-Print a string in reverse
+Function that print a string in reverse
 
 ## File `2-strlen_recursion.c`
-Returns the length of a string
+Function that returns the length of a string
 
 ## File `3-factorial.c`
-Calculates the factorial of a given number
+Function that returns the factorial of a given number
+
+## File `4-pow_recursion.c`
+Function that returns the value of `x` raised to the power of `y`.
 
 
