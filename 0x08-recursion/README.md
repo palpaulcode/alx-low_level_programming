@@ -10,4 +10,7 @@ Print a string in reverse
 ## File `2-strlen_recursion.c`
 Returns the length of a string
 
+## File `3-factorial.c`
+Calculates the factorial of a given number
+
 
