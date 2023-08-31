@@ -25,4 +25,6 @@ Function that returns `1` if the input intger is a `prime number`, otherwise it 
 ## File `100-is_palindrome.c`
 Function that returns `1` if a string is a palindrome and `0` if not.
 
+## File `101-wildcmp.c`
+Function that compares two strings and returns `1` if the strings can be considered identical, otherwise returns `0`.
 
