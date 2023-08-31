@@ -16,4 +16,7 @@ Function that returns the factorial of a given number
 ## File `4-pow_recursion.c`
 Function that returns the value of `x` raised to the power of `y`.
 
+## File `5-sqrt_recursion.c`
+Function that finds the natural square root of a number
+
 
