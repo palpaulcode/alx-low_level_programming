@@ -22,4 +22,7 @@ Function that finds the natural square root of a number
 ## File `6-is_prime_number.c`
 Function that returns `1` if the input intger is a `prime number`, otherwise it returns `0`.
 
+## File `100-is_palindrome.c`
+Function that returns `1` if a string is a palindrome and `0` if not.
+
 
