@@ -4,4 +4,7 @@ This repository contains coding tasks on recursion in C programming in the ALX_S
 ## File `0-puts_recursion.c`
 Contains a function that prints a string followed by a new line
 
+## File `1-print_rev_recursion.c`
+Print a string in reverse
+
 
