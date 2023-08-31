@@ -19,4 +19,7 @@ Function that returns the value of `x` raised to the power of `y`.
 ## File `5-sqrt_recursion.c`
 Function that finds the natural square root of a number
 
+## File `6-is_prime_number.c`
+Function that returns `1` if the input intger is a `prime number`, otherwise it returns `0`.
+
 
