@@ -16,4 +16,5 @@ A program that multiplies two numbers. If it does not receive two arguments, it 
 ## File `4-add.c`
 A program that adds positive numbers. If no number is passed to the program, it prints `0` followed by a new line. If one of the numbers contains symbols that are not digits, it prints `Error` followed by a new line and returns `1`.
 
-
+## File `100-change.c`
+Contains a program that prints the minimum number of coins to make change for an amount of money
