@@ -9,17 +9,42 @@
 *.s
 *.o
 
+# ignore _putchar used to print to standard output
+# used extensively in this C course
+_putchar.c
+
 # ignore main.c in directory 0x00-hello_world
 0x00-hello_world/main.c
 
-# This is a printing function in directories 0x02 and 0x04
-_putchar.c
+# Ignore testdir in directory 0x02-functions_nested_loops
+0x02-functions_nested_loops/testdir
 
-# ignore testdir in directory 0x02-functions_nested_loops
-testdir/
+# ignore test files in directory 0x05-pointers_arrays_strings
+0x05-pointers_arrays_strings/[0-9]*-main.c
+
+# ignore test files everywhere
+# [0-9]*-main.c
+
+# ignore '.c' files in directory 0x09-static_libraries
+0x09-static_libraries/*.c
 
 # ignore file 3-main_a.c in directory 0x03-debugging
 0x03-debugging/3-main_a.c
+
+# ignore test files in 0x06-pointers_arrays_strings
+0x06-pointers_arrays_strings/[0-9]*-main.c
+
+# ignore copy of files in 0x06-pointers_arrays_strings
+0x06-pointers_arrays_strings/*copy*
+
+# ignore 0x07-pointers_arrays_strings test files
+0x07-pointers_arrays_strings/[0-9]*-main.c
+
+# ignore test files in directory 0x08-recursion
+0x08-recursion/[0-9]*-main.c
+
+# ignore test files in directory 0x0B-malloc_free
+0x0B-malloc_free/[0-9]*-main.c
 
 # if, for example, you ignore all .md files as below.md
 .md
