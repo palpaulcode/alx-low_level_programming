@@ -8,4 +8,8 @@ This file contains a function that creates an array and initializes it with a sp
 ## File `1-strdup.c`
 This file contains a function that returns a pointer to a newly allocated space in memory, which contains a copy of the string given as a parameter.
 
+## File `2-str_concat.c`
+This file contains a function that concatenates two strings. The returned pointer points to a newly allocated space in memory which contains the contents of `s1`, followed by the contents of `s2`, and null terminated. 
+The working of this function is similar to [this](https://github.com/palpaulcode/alx-low_level_programming/blob/master/0x06-pointers_arrays_strings/0-strcat.c) function except that here the copy is being done to a new memory location instead of appending the second string to the first
+
 
