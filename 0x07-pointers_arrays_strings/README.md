@@ -17,7 +17,7 @@ Gets the length of a prefix substring
 Function that searches a string for any of a set of bytes.
 
 ## File `5-strstr.c`
-Cotains a function `_strstr()` that finds the first occurence of the substring `needle` in the string `haystack`. The terminating null bytes are not compared
+This file contains a function `_strstr()` that finds the first occurence of the substring `needle` in the string `haystack`. The terminating null bytes are not compared
 
 ## File `7-print_chessboard.c`
 Prints a chessboard
