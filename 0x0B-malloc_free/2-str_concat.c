@@ -33,7 +33,7 @@ char *str_concat(char *s1, char *s2)
 	}
 	/* at this point strlen is at the '\0' marker of str2 */
 	/* reserve memory space for the new string */
-	new_str = malloc(sizeof(char) * strlen);
+	new_str = malloc(sizeof(char) * (strlen + 1));
 
 	while (i < str1len) /* copy s1 to new memory */
 	{
