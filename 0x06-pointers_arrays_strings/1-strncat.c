@@ -2,9 +2,10 @@
 #include <string.h>
 /**
  * _strncat - concatenates two strings
- * Description: removes the terminating null byte from the
- * first string, appends the second string and adds the
- * terminating null byte
+ * Description: concatenates two strings. Similar to _strcat
+ * in task 0-strcat.c except that it copies n bytes from
+ * src and src does not need to be null-terminated if it
+ * contains n or more bytes
  * @dest: the first string to contenate the second one to
  * @src: the second string
  * @n: the size to cut from str 2
