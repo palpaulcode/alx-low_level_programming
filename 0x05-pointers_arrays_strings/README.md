@@ -31,7 +31,7 @@ Prints n elements of an array of integers
 ## File `9-strcpy.c`
 Copies the string pointed to by `src` including the terminating null byte (`\0`), to the buffer pointed to by `dest`.
 
-##File `100-atoi.c`
+## File `100-atoi.c`
 Converts a string to an integer
 
 ## File `101-keygen.c`
