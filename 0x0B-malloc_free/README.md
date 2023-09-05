@@ -15,4 +15,7 @@ The working of this function is similar to [this](https://github.com/palpaulcode
 ## File `3-alloc_grid.c`
 File contains a function that returns a pointer to a 2-D array of integers. Each element of the grid is initialized to `0`. The function returns `NULL` on failure. If `width` or `height` of the grid is `0` or negative, the function returns `NULL`.
 
+## File `4-free_grid.c`
+This file contains a function that frees a 2-dimensional grid previously created by `alloc_grid` function above. 
+
 
