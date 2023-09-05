@@ -55,7 +55,7 @@ int no_of_words(char *str)
 char **str_words(char **w_arr, char *str, int w_count)
 {
 	int i, j = 0, w_size = 0, tmp = 0;
-	
+
 	if (w_arr != NULL)
 	{
 		for (i = 0; i <= str_len(str) && w_count; i++)
@@ -102,17 +102,17 @@ char **strtow(char *str)
 	char **w_arr;
 	int w_count;
 
-	if (*str == '\0' || str == NULL)
+	if (*str == '\0' || str == NULL || *str == ' ')
 		return (NULL);
-	
+
 	w_count = no_of_words(str);
 
 	if (w_count == 0)
 		return (NULL);
 
 	w_arr = (char **) malloc(sizeof(char *) * (w_count + 1));
-	
+
 	w_arr = str_words(w_arr, str, w_count);
-	
-	return (w_arr);	
+
+	return (w_arr);
 }
