@@ -12,4 +12,7 @@ This file contains a function that returns a pointer to a newly allocated space 
 This file contains a function that concatenates two strings. The returned pointer points to a newly allocated space in memory which contains the contents of `s1`, followed by the contents of `s2`, and null terminated. 
 The working of this function is similar to [this](https://github.com/palpaulcode/alx-low_level_programming/blob/master/0x06-pointers_arrays_strings/0-strcat.c) function except that here the copy is being done to a new memory location instead of appending the second string to the first
 
+## File `3-alloc_grid.c`
+File contains a function that returns a pointer to a 2-D array of integers. Each element of the grid is initialized to `0`. The function returns `NULL` on failure. If `width` or `height` of the grid is `0` or negative, the function returns `NULL`.
+
 
