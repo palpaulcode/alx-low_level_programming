@@ -9,9 +9,6 @@ int str_len(char *str)
 {
 	int l = 0; /* hold string length */
 
-	if (str == ' ') /* if empty string */
-		return (NULL);
-
 	if (str != NULL)
 	{
 		while (str[l])
@@ -28,8 +25,6 @@ int str_len(char *str)
 int no_of_words(char *str)
 {
 	int i = 0, w_count = 0;
-
-	/* here */
 
 	while (i <= str_len(str))
 	{
@@ -60,8 +55,6 @@ int no_of_words(char *str)
 char **str_words(char **w_arr, char *str, int w_count)
 {
 	int i, j = 0, w_size = 0, tmp = 0;
-
-	/* here */
 
 	if (w_arr != NULL)
 	{
