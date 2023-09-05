@@ -18,4 +18,7 @@ File contains a function that returns a pointer to a 2-D array of integers. Each
 ## File `4-free_grid.c`
 This file contains a function that frees a 2-dimensional grid previously created by `alloc_grid` function above. 
 
+## File `100-argstostr.c`
+This file contains a function that concatenates all the arguments of your program, assigns the concatenated string a new memory address, and returns a pointer to the new string. Each argument is followed by a `\n` in this new string. The function returns `NULL` if `ac == 0` or `av == NULL`.
+
 
