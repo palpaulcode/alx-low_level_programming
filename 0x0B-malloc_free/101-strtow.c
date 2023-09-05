@@ -102,7 +102,7 @@ char **strtow(char *str)
 	char **w_arr;
 	int w_count;
 
-	if (*str == '\0' || str == NULL || *str == ' ')
+	if (*str == '\0' || str == NULL)
 		return (NULL);
 
 	w_count = no_of_words(str);
