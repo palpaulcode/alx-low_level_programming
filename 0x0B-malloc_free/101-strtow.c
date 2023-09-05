@@ -1,6 +1,6 @@
 #include <stdlib.h>
 /**
- * strlen - finds length of a given string
+ * str_len - finds length of a given string
  * @str: the string to get its length
  *
  * Return: length of a string
@@ -44,21 +44,18 @@ int no_of_words(char *str)
 	}
 	return (w_count);
 }
-
 /**
- * strtow - splits string into words
+ * str_words - splits a stirng to words
+ * @w_arr: the new array to store the words
  * @str: the string to split to words
+ * @w_count: the number of words
  *
- * Return: a pointer to an array of words
+ * Return: a pointer to an array of words from the string
  */
-char **strtow(char *str)
+char **str_words(char **w_arr, char *str, int w_count)
 {
-	char **w_arr;
-	int i, j = 0, w_count = no_of_words(str), w_size = 0, tmp = 0;
-
-	if (w_count == 0)
-		return (NULL);
-	w_arr = (char **) malloc(sizeof(char *) * (w_count + 1));
+	int i, j = 0, w_size = 0, tmp = 0;
+	
 	if (w_arr != NULL)
 	{
 		for (i = 0; i <= str_len(str) && w_count; i++)
@@ -93,4 +90,29 @@ char **strtow(char *str)
 	}
 	else
 		return (NULL);
+}
+/**
+ * strtow - splits string into words
+ * @str: the string to split to words
+ *
+ * Return: a pointer to an array of words
+ */
+char **strtow(char *str)
+{
+	char **w_arr;
+	int w_count;
+
+	if (*str == '\0' || str == NULL)
+		return (NULL);
+	
+	w_count = no_of_words(str);
+
+	if (w_count == 0)
+		return (NULL);
+
+	w_arr = (char **) malloc(sizeof(char *) * (w_count + 1));
+	
+	w_arr = str_words(w_arr, str, w_count);
+	
+	return (w_arr);	
 }
