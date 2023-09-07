@@ -23,12 +23,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s2[s2len] != '\0') /* get length of string s2 */ 
 		s2len++;
 
-	if (n < s2len) /* find bytes to reserve in memory */
-		len = s1len + n;
-	else
+	if (n >= s2len) /* find bytes to reserve in memory */
 		len = s1len + s2len;
+	else
+		len = s1len + n;
 
-	str = malloc(sizeof(char) * (len + 1));
+	str = malloc(sizeof(char) * (len)); /* reserve memory */
 
 	if (str == NULL) /* handle malloc return */
 		return (NULL);
