@@ -4,6 +4,7 @@
  * string_nconcat - concatenates string s1 with n bytes from string s2
  * @s1: string 1
  * @s2: string 2
+ * @n: no of characters to copy from string s2
  *
  * Return: returns a pointer to the new  string in memory.
  */
@@ -20,7 +21,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s1[s1len] != '\0') /* get length of string s1 */
 		s1len++;
 
-	while (s2[s2len] != '\0') /* get length of string s2 */ 
+	while (s2[s2len] != '\0') /* get length of string s2 */
 		s2len++;
 
 	if (n >= s2len) /* find bytes to reserve in memory */
