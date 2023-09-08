@@ -10,4 +10,7 @@ This file contains a function that concatenates two strings. It returns a pointe
 ## File `2-calloc.c`
 This file contains a function, `_calloc`, that allocates memory for an array, using `malloc`. The function allocates memory of an array of `nmemb` elements of `size` bytes each and returns a pointer to the allocated memory. The memory is set to zero. If `nmemb` or `size` is `0`, then `_calloc` returns `NULL`. If `malloc` fails, then `_calloc` returns `NULL`.
 
+## File `3-array_range.c`
+This file contains a function that creates an array of integers. The array created should contain all the values from `min` (included) to `max` (included), ordered from `min` to `max`. If `min` > `max` return `NULL`. If `malloc` fails, return `NULL`.
+
 
