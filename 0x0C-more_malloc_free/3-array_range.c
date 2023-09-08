@@ -8,7 +8,7 @@
  */
 int *array_range(int min, int max)
 {
-	int *arr, i;
+	int *arr, i, j;
 	unsigned int range;
 
 	if (min > max) /* if min > max return NULL */
@@ -21,8 +21,8 @@ int *array_range(int min, int max)
 	if (arr == NULL) /* handle malloc return */
 		return (NULL);
 
-	for (i = min; i <= max; i++) /* fill array with values */
-		arr[i] = i;
+	for (j = 0, i = min; i <= max; j++, i++) /* fill array with values */
+		arr[j] = i;
 
 	return (arr);
 }
