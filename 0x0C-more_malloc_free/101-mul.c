@@ -47,7 +47,10 @@ void errors(void)
 	char st[] = "Error\n";
 
 	while (i < 6)
+	{
 		_putchar(st[i]);
+		i++;
+	}
 	exit(98);
 }
 /**
