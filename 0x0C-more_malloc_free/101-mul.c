@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
 		{
 			g = s2[b] - '0';
 			e += result[a + b + 1] + (f * g);
-			result[a + a + 1] = e % 10;
+			result[a + b + 1] = e % 10;
 			e /= 10;
 		}
 		if (e > 0)
