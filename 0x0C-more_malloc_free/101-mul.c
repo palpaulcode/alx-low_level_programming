@@ -43,7 +43,11 @@ int _strlen(char *s)
  */
 void errors(void)
 {
-	printf("Error\n");
+	int i = 0;
+	char st[] = "Error\n";
+
+	while (i < 6)
+		_putchar(st[i]);
 	exit(98);
 }
 /**
@@ -76,7 +80,7 @@ int main(int argc, char *argv[])
 		for (b = _strlen(s2) - 1; b >= 0; b--)
 		{
 			g = s2[b] - '0';
-			e += result[a + b + 1] + (f * g);
+			e = e + result[a + b + 1] + (f * g);
 			result[a + b + 1] = e % 10;
 			e /= 10;
 		}
