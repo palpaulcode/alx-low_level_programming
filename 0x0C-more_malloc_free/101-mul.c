@@ -72,6 +72,8 @@ int main(int argc, char *argv[])
 	b = _strlen(s2);
 	c = a + b + 1;
 	result = malloc(sizeof(int) * c);
+	if (result == NULL)
+		return (1);
 	if (!result)
 		return (1);
 	for (d = 0; d <= a + b; d++)
