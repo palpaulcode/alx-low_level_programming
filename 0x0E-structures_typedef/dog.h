@@ -1,6 +1,8 @@
+#ifndef DOG_HEADER_H
+#define DOG_HEADER_H
 /**
  * struct dog - holds dog information
- * @dog: name of the dog
+ * @name: name of the dog
  * @age: age of the dog
  * @owner: owner of the dog
  */
@@ -10,3 +12,4 @@ struct dog
 	float age;
 	char *owner;
 };
+#endif
