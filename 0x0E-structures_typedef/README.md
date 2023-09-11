@@ -25,4 +25,7 @@ This file contains a function that creates a new dog
 * You have to store a copy of `name` and `owner`
 * Return `NULL` if the function fails
 
+## File `5-free_dog.c`
+This file contains a function that frees dogs (memory used to represent dog)
+* Prototype: `void free_dog(dog_t *d);`
 
