@@ -8,8 +8,9 @@
  */
 void print_dog(struct dog *d)
 {
-	if (d != NULL)
-	{
+	if (d == NULL)
+		break;
+	
 		if (!(*d).name)
 			printf("Name: (nil)\n");
 		else
@@ -24,5 +25,5 @@ void print_dog(struct dog *d)
 			printf("Owner: (nil)\n");
 		else
 			printf("Owner: %s\n", (*d).owner);
-	}
+
 }
