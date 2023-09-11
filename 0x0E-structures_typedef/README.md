@@ -7,4 +7,7 @@ This file contains type `struct dog` with elements:
 * `age`, type = `float`
 * `owner`, type = `char *`
 
+## File `1-init_dog.c`
+This file contains a function that initializes a variable of type `struct dog`. The prototype to this function is as follows: `void init_dog(struct dog *d, char *name, float age, char *owner);`
+
 
