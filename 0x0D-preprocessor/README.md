@@ -13,4 +13,5 @@ This file contains a program that prints the name of the file it was compiled fr
 ## File `3-function_like_macro.h`
 This file contains a function-like macro `ABS(X)` that computes the absolute value of a number `x`.
 
-
+## File `4-sum.h`
+This file contains a function-like macro `SUM(x, y)` that computes the sum of the numbers `x` and `y`.
