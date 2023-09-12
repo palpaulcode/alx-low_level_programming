@@ -19,17 +19,14 @@ _putchar.c
 # Ignore testdir in directory 0x02-functions_nested_loops
 0x02-functions_nested_loops/testdir
 
-# ignore test files in directory 0x05-pointers_arrays_strings
-0x05-pointers_arrays_strings/[0-9]*-main.c
-
 # ignore test files everywhere
 # [0-9]*-main.c
 
-# ignore '.c' files in directory 0x09-static_libraries
-0x09-static_libraries/*.c
-
 # ignore file 3-main_a.c in directory 0x03-debugging
 0x03-debugging/3-main_a.c
+
+# ignore test files in directory 0x05-pointers_arrays_strings
+0x05-pointers_arrays_strings/[0-9]*-main.c
 
 # ignore test files in 0x06-pointers_arrays_strings
 0x06-pointers_arrays_strings/[0-9]*-main.c
@@ -43,8 +40,19 @@ _putchar.c
 # ignore test files in directory 0x08-recursion
 0x08-recursion/[0-9]*-main.c
 
+# ignore '.c' files in directory 0x09-static_libraries
+0x09-static_libraries/*.c
+
 # ignore test files in directory 0x0B-malloc_free
 0x0B-malloc_free/[0-9]*-main.c
+
+# ignore test files in 0x0D-preprocessor
+0x0D-preprocessor/[0-9]*-main.c
+# do not ignore this file in preprocessor
+!0x0D-preprocessor2-main.c
+
+# ignore test files in 0x0E-structures_typedef
+0x0E-structures_typedef/[0-9]*-main.c
 
 # if, for example, you ignore all .md files as below.md
 .md
