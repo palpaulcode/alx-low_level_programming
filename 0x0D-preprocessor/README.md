@@ -7,4 +7,7 @@ This file creates a header file that defines a macro named `SIZE` as an abbrevia
 ## File `1-pi.h`
 This file creates a header file that defines a macro named `PI` as an abbreviation for the token `3.14159265359`.
 
+## File `2-main.c`
+This file contains a program that prints the name of the file it was compiled from, followed by a newline.
+
 
