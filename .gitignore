@@ -54,6 +54,9 @@ _putchar.c
 # ignore test files in 0x0E-structures_typedef
 0x0E-structures_typedef/[0-9]*-main.c
 
+# ignore test files in repository in 0x0F-function_pointers
+0x0F-function_pointers/[0-9]*-main.c
+
 # if, for example, you ignore all .md files as below.md
 .md
 
