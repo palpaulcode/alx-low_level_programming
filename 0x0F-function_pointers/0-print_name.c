@@ -1,4 +1,4 @@
-
+#include <stdlib.h>
 /**
  * print_name - prints name in uppercase and/or lowercase
  * @name: the name to print
@@ -8,5 +8,6 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	f(name);
+	if (name != NULL)
+		f(name);
 }
