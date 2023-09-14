@@ -1,113 +1,121 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
-
-#define ERR_MSG "Error"
-
 /**
- * is_digit - check if string contains non digit char
- * @s: string to be evaluated
+ * check_no - checks if character is a number
+ * @c: character to check
  *
- * Return: 0 if non digit is found, 1 otherwise
+ * Return: 1 if c is number, 0 otherwise
  */
-int is_digit(char *s)
+int check_no(char *c)
 {
 	int i = 0;
 
-	while (s[i])
+	while (c[i])
 	{
-		if (s[i] < '0' || s[i] > '9')
+		if (c[i] < '0' || c[i] > '9')
 			return (0);
 		i++;
 	}
 	return (1);
 }
+
 /**
- * _strlen - returns the length of a string
- * @s: the string to evaluate
+ * print_err - prints error message
  *
- * Return: the length of the string
+ * Return: void
  */
-int _strlen(char *s)
-{
-	int i = 0, j = 0;
-
-	/*while (s[i] != '\0')
-	{
-
-		i++;
-	}
-	return (i);*/
-
-	for (; s[i] != '\0'; i++)
-		j++;
-	return (j);
-}
-/**
- * errors - handle errors for main
- */
-void errors(void)
+void print_err(void)
 {
 	int i = 0;
-	char st[] = "Error\n";
+	char err[] = "Error";
 
-	while (i < 6)
+	while (err[i] != '\0')
 	{
-		_putchar(st[i]);
+		_putchar(err[i]);
 		i++;
 	}
+	_putchar('\n');
+
 	exit(98);
 }
 /**
- * main - multiplies two positive numbers
- * @argc: number of arguments
- * @argv: array of arguments
+ * str_len - counts length of a string
+ * @c: the string to get length of
  *
- * Return: always 0(success)
+ * Return: length of the string
+ */
+int str_len(char *c)
+{
+	int i, len = 0;
+
+	for (i = 0; c[i] != '\0'; i++)
+		len++;
+
+	return (len);
+}
+/**
+ * misc - calculates last part of main
+ * @tlen: total string length
+ * @mem: pointer to memory block
+ * Return: void
+ */
+void misc(int tlen, int *mem)
+{
+	int i, j = 0;
+
+	for (i = 0; i < tlen - 1; i++)
+	{
+		if (mem[i])
+			j = 1;
+		if (j)
+			_putchar(mem[i] + '0');
+	}
+	if (!j)
+		_putchar('0');
+	_putchar('\n');
+	free(mem);
+}
+/**
+ * main - program entry point
+ * @argc: argument count
+ * @argv: argument array
+ *
+ * Return: 0 for success
  */
 int main(int argc, char *argv[])
 {
-	char *s1, *s2;
-	int a, b, c, d, e, f, g, *result, i = 0;
+	char *num1, *num2;
+	int s1len, s2len, tlen, *mem, a, no1, no2, cf;
 
-	s1 = argv[1], s2 = argv[2];
-	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
-		errors();
-	a = _strlen(s1);
-	b = _strlen(s2);
-	c = a + b + 1;
-	result = malloc(sizeof(int) * c);
-	if (result == NULL)
+	num1 = argv[1];
+	num2 = argv[2];
+	if (argc != 3 || !check_no(num1) || !check_no(num2))
+		print_err();
+	/* get str len*/
+	s1len = str_len(num1);
+	s2len = str_len(num2);
+	tlen = s1len + s2len + 1;
+	mem = malloc(sizeof(int) * tlen);
+	if (mem == NULL)
+		return (1);/* print_err() */
+	if (!mem)
 		return (1);
-	if (!result)
-		return (1);
-	for (d = 0; d <= a + b; d++)
-		result[d] = 0;
-	for (a = a - 1; a >= 0; a--)
+	for (a = 0; a < (s1len + s2len); a++)
+		mem[a] = 0;
+	for (s1len = s1len - 1; s1len >= 0; s1len--)
 	{
-		f = s1[a] - '0';
-		e = 0;
-		for (b = _strlen(s2) - 1; b >= 0; b--)
+		no1 = num1[s1len] - '0';
+		cf = 0;
+		for (s2len = str_len(num2) - 1; s2len >= 0; s2len--)
 		{
-			g = s2[b] - '0';
-			e = e + result[a + b + 1] + (f * g);
-			result[a + b + 1] = e % 10;
-			e /= 10;
+			no2 = num2[s2len] - '0';
+			cf = cf + mem[s1len + s2len + 1] + (no1 * no2);
+			mem[s1len + s2len + 1] = cf % 10;
+			cf = cf / 10;
 		}
-		if (e > 0)
-			result[a + b + 1] += e;
+		if (cf > 0)
+			mem[s1len + s2len + 1] += cf;
 	}
-	for (d = 0; d < c - 1; d++)
-	{
-		if (result[d])
-			i = 1;
-		if (i)
-			_putchar(result[d] + '0');
-	}
-	if (!i)
-		_putchar('0');
-	_putchar('\0');
-	free(result);
+	misc(tlen, mem);
 	return (0);
 }
-
