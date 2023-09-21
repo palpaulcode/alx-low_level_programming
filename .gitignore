@@ -63,6 +63,11 @@ _putchar.c
 # ignore test files for directory 0x10-variadic_functions
 0x10-variadic_functions/[0-9]*-main.c
 
+# ignore test files in directory 0x12-singly_linked_lists
+0x12-singly_linked_lists/[0-9]*-main.c
+# ignore file _putchar.c in 0x12
+0x12-singly_linked_lists/_putchar.c
+
 # if, for example, you ignore all .md files as below.md
 .md
 
