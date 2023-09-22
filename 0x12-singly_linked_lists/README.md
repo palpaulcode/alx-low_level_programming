@@ -25,4 +25,7 @@ This file contains a function that that adds a new node at the end of a `list_t`
 * `str` needs to be duplicated
 * You are allowed to use `strdup`
 
+## File `4-free_list.c`
+This file contains a function that frees a `list_t` list.
+* Prototype: `void free_list(list_t *head);`
 
