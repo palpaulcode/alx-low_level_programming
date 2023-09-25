@@ -15,6 +15,9 @@ int pop_listint(listint_t **head)
 	if (head == NULL)
 		return (0);
 
+	if (*head == NULL)
+		return (0);
+
 	temp = *head; /* assign address held at head to temp */
 	val = temp->n; /* value at head node */
 	*head = temp->next; /* assign new address to head */
