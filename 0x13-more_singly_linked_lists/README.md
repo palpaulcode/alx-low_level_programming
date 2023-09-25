@@ -1,4 +1,4 @@
-# 0x13 C - MOre singly linked lists
+# 0x13 C - More singly linked lists
 This directory contains solutions to coding tasks from the aforementioned section in the C course within the ALX_SE curriculum
 
 ## File `0-print_listint.c`
@@ -19,5 +19,9 @@ This file contains a function that adds a new node at the beginning of a `listin
 This file contains a function that adds a new node at the end of a `listint_t` list.
 * Prototype: `listint_t *add_nodeint_end(listint_t **head, const int n);`
 * Return: the address of the new element, or `NULL` if it failed
+
+## File `4-free_listint.c`
+This file contains a function that frees a `listint_t` list.
+* Prototype: `void free_listint(listint_t *head);`
 
 
