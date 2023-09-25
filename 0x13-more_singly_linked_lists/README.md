@@ -24,4 +24,9 @@ This file contains a function that adds a new node at the end of a `listint_t` l
 This file contains a function that frees a `listint_t` list.
 * Prototype: `void free_listint(listint_t *head);`
 
+## File `5-free_listint2.c`
+This file contains a function that frees a `listint-t` list.
+* Prototype: `void free_listint2(listint_t **head);`
+* The function sets the `head` to `NULL`
+
 
