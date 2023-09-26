@@ -12,9 +12,12 @@ size_t print_listint_safe(const listint_t *head)
 	size_t count  = 0;
 	long int t_df;
 
+	if (head == NULL)
+		exit(98);
+
 	temp = head;
 
-	if (temp == NULL)
+	if (temp == NULL || !temp)
 		exit(98);
 
 	while (temp != NULL)
@@ -32,8 +35,6 @@ size_t print_listint_safe(const listint_t *head)
 			printf("-> [%p] %d\n", (void *)temp->next, temp->next->n);
 			break;
 		}
-
-
 	}
 
 	return (count);
