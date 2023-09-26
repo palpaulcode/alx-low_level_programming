@@ -15,7 +15,7 @@ size_t print_listint_safe(const listint_t *head)
 	temp = head;
 
 	if (temp == NULL)
-		exit (98);
+		exit(98);
 
 	while (temp != NULL)
 	{
@@ -25,7 +25,7 @@ size_t print_listint_safe(const listint_t *head)
 
 		if (t_df > 0)
 		{
-			temp = temp ->next;
+			temp = temp->next;
 		}
 		else
 		{
