@@ -12,6 +12,9 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	unsigned int count = 0, i = 0;
 	listint_t *node, *temp, *temp2;
 
+	if (head == NULL)
+		return (NULL);
+
 	temp = head;
 	temp2 = head;
 
