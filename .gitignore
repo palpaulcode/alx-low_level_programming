@@ -70,6 +70,8 @@ _putchar.c
 
 # ignore test files for directory 0x13-more_singly_linked_lists
 0x13-more_singly_linked_lists/[0-9]*-main.c
+# ignore backup file for task 101
+0x13-more_singly_linked_lists/101-backup
 
 # if, for example, you ignore all .md files as below.md
 .md
