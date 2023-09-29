@@ -28,4 +28,10 @@ This file contains a a function that sets the value of a bit to 1 at a given ind
 * where index is the `index`, starting from `0` of the bit you want to set
 * Returns: `1` if it worked, or `-1` if an error occurred
 
+## File `4-clear_bit.c`
+This file contains a function that sets the value of a bit to `0` at a given index.
+* Prototype: `int clear_bit(unsigned long int *n, unsigned int index);`
+* where index is the `index`, starting from `0` of the bit you want to set
+* Returns: `1` if it worked, or `-1` if an error occurred
+
 
