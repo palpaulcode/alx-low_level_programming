@@ -76,6 +76,11 @@ _putchar.c
 # ignore test files for directory 0x14-bit_manipulation
 0x14-bit_manipulation/[0-9]*-main.c
 
+# ignore test files for directory 0x15-file_io
+0x15-file_io/[0-9]*-main.c
+# ignore other files
+0x15-file_io/Requiescat
+
 # if, for example, you ignore all .md files as below.md
 .md
 
