@@ -16,7 +16,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	mem = malloc(sizeof(char) * letters);
-
 	if (mem == NULL) /* handle malloc return */
 		return (0);
 
@@ -37,7 +36,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	wr = write(STDOUT_FILENO, mem, letters);
-	if (wr == -1)
+	if (wr == -1 || wr != rd)
 	{
 		free(mem);
 		close(op);
