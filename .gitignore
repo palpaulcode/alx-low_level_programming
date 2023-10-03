@@ -78,8 +78,10 @@ _putchar.c
 
 # ignore test files for directory 0x15-file_io
 0x15-file_io/[0-9]*-main.c
-# ignore other files
+# ignore other files used for testing
 0x15-file_io/Requiescat
+0x15-file_io/incitatous
+0x15-file_io/Incitatous
 
 # if, for example, you ignore all .md files as below.md
 .md
