@@ -5,14 +5,19 @@
  * @message: message to print
  * @code: exit code
  * @file: name of file
+ * @fd_from: src file descriptor
+ * @fd_to: dest file descriptor
  *
  * Return: void
  */
-void error(const char *message, int code, const char *file, int fd_from, int fd_to)
+void error(const char *message, int code, const char *file,
+		int fd_from, int fd_to)
 {
 	dprintf(STDERR_FILENO, message, file);
-	close(fd_from);
-	close(fd_to);
+	if (fd_from != -1)
+		close(fd_from);
+	if (fd_from != -1)
+		close(fd_to);
 	exit(code);
 }
 
