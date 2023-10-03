@@ -80,13 +80,13 @@ int main(int argc, char *argv[])
 
 	while ((rd = read(fd_from, mem, BUFFER)) > 0)
 	{
+		if (rd == -1)
+			error("Error: Can't read from file %s\n", 98, src, fd_from, fd_to);
 		wr = write(fd_to, mem, rd);
 		if (wr == -1)
 			error("Error: Can't write to file %s\n", 99, dest, fd_from, fd_to);
 	}
 
-	if (rd == -1)
-		error("Error: Can't read from file %s\n", 98, src, fd_from, fd_to);
 	if (close(fd_from) == -1)
 		close_error("Error: Can't close fd %d\n", 100, fd_from);
 	if (close(fd_to) == -1)
