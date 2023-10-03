@@ -5,6 +5,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <string.h>
+#include <elf.h>
+#include <errno.h>
 
 #define BUFFER 1024
 
