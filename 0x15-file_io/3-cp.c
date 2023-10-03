@@ -22,20 +22,6 @@ void error(const char *message, int code, const char *file,
 }
 
 /**
- * close_error - prints errer for closing
- * @message: message to print
- * @code: exit code
- * @id: id of the close
- *
- * Return: void
- */
-void close_error(const char *message, int code, int id)
-{
-	dprintf(STDERR_FILENO,  message, id);
-	exit(code);
-}
-
-/**
  * arg_error - print error for wrong args
  * @message: message to print
  * @code: exit code
@@ -46,6 +32,29 @@ void arg_error(char *message, int code)
 {
 	dprintf(STDERR_FILENO, "%s", message);
 	exit(code);
+}
+
+/**
+ * close_fd - close file descriptor
+ * @fd: file descriptor to close
+ * Description: if cannot close a file descriptor , exit with
+ * code 100 and print Error: Can't close fd FD_VALUE, followed
+ * by a new line, on the POSIX standard error
+ * where FD_VALUE is the value of the file descriptor
+ *
+ * Return: void
+ */
+void close_fd(int fd)
+{
+	int c;
+
+	c = close(fd);
+
+	if (c == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
 }
 
 /**
@@ -80,18 +89,15 @@ int main(int argc, char *argv[])
 
 	while ((rd = read(fd_from, mem, BUFFER)) > 0)
 	{
-		if (rd == -1)
-			error("Error: Can't read from file %s\n", 98, src, fd_from, fd_to);
 		wr = write(fd_to, mem, rd);
 		if (wr == -1)
 			error("Error: Can't write to file %s\n", 99, dest, fd_from, fd_to);
 	}
 	if (rd == -1)
 		error("Error: Can't read from file %s\n", 98, src, fd_from, fd_to);
-	if (close(fd_from) == -1)
-		close_error("Error: Can't close fd %d\n", 100, fd_from);
-	if (close(fd_to) == -1)
-		close_error("Error: Can't close fd %d\n", 100, fd_to);
+
+	close_fd(fd_from);
+	close_fd(fd_to);
 
 	return (0);
 }
