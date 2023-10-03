@@ -8,9 +8,11 @@
  *
  * Return: void
  */
-void error(const char *message, int code, const char *file)
+void error(const char *message, int code, const char *file, int fd_from, int fd_to)
 {
 	dprintf(STDERR_FILENO, message, file);
+	close(fd_from);
+	close(fd_to);
 	exit(code);
 }
 
@@ -63,23 +65,23 @@ int main(int argc, char *argv[])
 
 	fd_from = open(src, O_RDONLY);
 	if (fd_from == -1)
-		error("Error: Can't read from file %s\n", 98, src);
+		error("Error: Can't read from file %s\n", 98, src, fd_from, -1);
 
 	fd_to = open(dest, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR |
 			S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 
 	if (fd_to == -1)
-		error("Error: Can't write to file %s\n", 99, dest);
+		error("Error: Can't write to file %s\n", 99, dest, fd_from, fd_to);
 
 	while ((rd = read(fd_from, mem, BUFFER)) > 0)
 	{
 		wr = write(fd_to, mem, rd);
 		if (wr == -1)
-			error("Error: Can't write to file %s\n", 99, dest);
+			error("Error: Can't write to file %s\n", 99, dest, fd_from, fd_to);
 	}
 
 	if (rd == -1)
-		error("Error: Can't read from file %s\n", 98, src);
+		error("Error: Can't read from file %s\n", 98, src, fd_from, fd_to);
 	if (close(fd_from) == -1)
 		close_error("Error: Can't close fd %d\n", 100, fd_from);
 	if (close(fd_to) == -1)
