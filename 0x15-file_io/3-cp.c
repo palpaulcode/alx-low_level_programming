@@ -71,14 +71,14 @@ int main(int argc, char *argv[])
 	if (mem == NULL) /* handle malloc return */
 		error(99, "Error: Memory allocation failed", "");
 
-	while ((rd = read(fd_from, mem, BUFFER)) > 0)
-	{
+	do {
+		rd = read(fd_from, mem, BUFFER);
+		if (rd == -1)
+			error(98, "Error: Can't read from file %s\n", src);
 		wr = write(fd_to, mem, rd);
 		if (wr == -1)
 			error(99, "Error: Can't write to file %s\n", dest);
-	}
-	if (rd == -1)
-		error(98, "Error: Can't read from file %s\n", src);
+	} while (rd > 0);
 
 	free(mem);
 	close_fd(fd_from);
