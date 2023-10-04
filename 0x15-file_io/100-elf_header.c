@@ -23,7 +23,7 @@ void print_elf_header(const Elf64_Ehdr *header)
 	int i;
 
 	printf("ELF Header:\n");
-	printf("Magic:    "); /* append the hex characters to this line */
+	printf("  Magic:   "); /* append the hex characters to this line */
 
 	/* convert the characters to hex */
 	for (i = 0; i < EI_NIDENT; i++)
@@ -33,24 +33,24 @@ void print_elf_header(const Elf64_Ehdr *header)
 	/* move to next line */
 	printf("\n");
 
-	printf("Class:					%s\n",
+	printf("  Class:			     %s\n",
 			(header->e_ident[EI_CLASS] == ELFCLASS32)
 			? "ELF32" : "ELF64");
-	printf("Data:					%s\n",
+	printf("  Data:				     %s\n",
 			(header->e_ident[EI_DATA] == ELFDATA2LSB)
 			? "2's compliment, little endian"
 			: "2's compliment, big endian");
-	printf("Version:				%d (current)\n",
+	printf("  Version:			     %d (current)\n",
 			header->e_ident[EI_VERSION]);
-	printf("OS/ABI:					%s\n",
+	printf("  OS/ABI:			     %s\n",
 			(header->e_ident[EI_OSABI] == ELFOSABI_SYSV)
 			? "UNIX System V" : "Other");
-	printf("ABI Version:				%d\n",
+	printf("  ABI Version:			     %d\n",
 			(header->e_ident[EI_ABIVERSION]));
-	printf("Type:					%s\n",
+	printf("  Type:				     %s\n",
 			(header->e_type == ET_EXEC)
 			? "Executable" : "Other");
-	printf("Entry point address:			Ox%lx\n",
+	printf("  Entry point address:		     Ox%lx\n",
 			header->e_entry);
 }
 
