@@ -82,6 +82,8 @@ _putchar.c
 0x15-file_io/Requiescat
 0x15-file_io/incitatous
 0x15-file_io/Incitatous
+# ignore test  directory
+0x15-file_io/test
 
 # if, for example, you ignore all .md files as below.md
 .md
