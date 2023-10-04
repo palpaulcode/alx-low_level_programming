@@ -2,13 +2,13 @@
 
 /**
  * error - prints err and exits with given code
- * @message: message to print
  * @code: exit code
+ * @message: message to print
  * @file: name of file
  *
  * Return: void
  */
-void error(const char *message, int code, const char *file)
+void error(int code, const char *message, const char *file)
 {
 	dprintf(STDERR_FILENO, message, file);
 	exit(code);
@@ -48,36 +48,39 @@ int main(int argc, char *argv[])
 	int fd_from, fd_to;
 	const char *src, *dest;
 	ssize_t rd, wr;
-	char mem[BUFFER];
+	char *mem;
 
 	if (argc != 3)
-		error("Usage: cp file_from file_to\n", 97, "");
+		error(97, "Usage: cp file_from file_to\n", "");
 
 	src = argv[1];
 	dest = argv[2];
 
 	fd_from = open(src, O_RDONLY);
 	if (fd_from == -1)
-		error("Error: Can't read from file %s\n", 98, src);
-
+		error(98, "Error: Can't read from file %s\n", src);
 	/**
 	 * fd_to = open(dest, O_WRONLY | O_APPEND | O_CREAT | O_TRUNC, S_IRUSR |
 	 *		S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	 */
 	fd_to = open(dest, O_CREAT | O_WRONLY | O_TRUNC, 0664);
-
 	if (fd_to == -1)
-		error("Error: Can't write to file %s\n", 99, dest);
+		error(99, "Error: Can't write to file %s\n", dest);
+
+	mem = malloc(BUFFER);
+	if (mem == NULL) /* handle malloc return */
+		error(99, "Error: Memory allocation failed", "");
 
 	while ((rd = read(fd_from, mem, BUFFER)) > 0)
 	{
 		wr = write(fd_to, mem, rd);
 		if (wr == -1)
-			error("Error: Can't write to file %s\n", 99, dest);
+			error(99, "Error: Can't write to file %s\n", dest);
 	}
 	if (rd == -1)
-		error("Error: Can't read from file %s\n", 98, src);
+		error(98, "Error: Can't read from file %s\n", src);
 
+	free(mem);
 	close_fd(fd_from);
 	close_fd(fd_to);
 
