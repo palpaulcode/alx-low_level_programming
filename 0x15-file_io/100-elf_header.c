@@ -23,23 +23,23 @@ const char *get_elf_type(Elf64_Half e_type)
 	switch (e_type)
 	{
 		case ET_NONE:
-			return "NONE (Unknown type)";
+			return ("NONE (Unknown type)");
 		case ET_REL:
-			return "REL (Relocatable file)";
+			return ("REL (Relocatable file)");
 		case ET_EXEC:
-			return "EXEC (Executable file)";
+			return ("EXEC (Executable file)");
 		case ET_DYN:
-			return "DYN (Shared object file)";
+			return ("DYN (Shared object file)");
 		case ET_CORE:
-			return "CORE (Core file)";
+			return ("CORE (Core file)");
 		default:
-			return "Unknown";
+			return ("Unknown");
 	}
 }
 
 /**
  * print_elf_header - prints elf header
- * @fd: file descriptor to use
+ * @filename: name of file to use
  *
  * Return: void
  */
@@ -57,7 +57,6 @@ void print_elf_header(const char *filename)
 		close(fd);
 		exit_error("Error reading ELF header");
 	}
-
 	printf("ELF Header:\n");
 	printf("  Magic:   "); /* append the hex characters to this line */
 
@@ -66,9 +65,7 @@ void print_elf_header(const char *filename)
 	{
 		printf("%02x ", header.e_ident[i]);
 	}
-	/* move to next line */
 	printf("\n");
-
 	printf("  Class:			     %s\n",
 			(header.e_ident[EI_CLASS] == ELFCLASS32)
 			? "ELF32" : "ELF64");
