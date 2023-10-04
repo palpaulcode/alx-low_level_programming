@@ -81,8 +81,11 @@ int main(int argc, char *argv[])
 	if (fd_from == -1)
 		error("Error: Can't read from file %s\n", 98, src, fd_from, -1);
 
-	fd_to = open(dest, O_WRONLY | O_APPEND | O_CREAT | O_TRUNC, S_IRUSR |
-			S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	/**
+	 * fd_to = open(dest, O_WRONLY | O_APPEND | O_CREAT | O_TRUNC, S_IRUSR |
+	 *		S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	 */
+	fd_to = open(dest, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	if (fd_to == -1)
 		error("Error: Can't write to file %s\n", 99, dest, fd_from, fd_to);
