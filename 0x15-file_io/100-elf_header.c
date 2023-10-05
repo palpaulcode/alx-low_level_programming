@@ -144,8 +144,7 @@ void print_elf_header(const char *filename)
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		exit_error("Error opening file %s\n", filename);
-	/* reset the file pointer to the beginning of the file */
-	if (lseek(fd, 0, SEEK_SET == -1))
+	if (lseek(fd, 0, SEEK_SET == -1)) /*reset file pointer to beginning of file*/
 	{
 		close(fd);
 		exit_error("Error resetting file pointer for %s\n", filename);
@@ -157,10 +156,11 @@ void print_elf_header(const char *filename)
 	}
 	printf("ELF Header:\n");
 	printf("  Magic:   "); /* append the hex characters to this line */
-	/* convert the characters to hex */
-	for (i = 0; i < EI_NIDENT; i++)
+	for (i = 0; i < EI_NIDENT; i++) /* convert the characters to hex */
 	{
-		printf("%02x ", header.e_ident[i]);
+		printf("%02x", header.e_ident[i]);
+		if (i < (EI_NIDENT - 1))
+			printf(" ");
 	}
 	printf("\n");
 	printf("  Class:			     %s\n",
