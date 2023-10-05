@@ -181,13 +181,13 @@ void print_elf_header(const char *filename)
  *
  * Return: 1 if ELF file, 0 Otherwise
  */
-int is_elf_file(int fd)
+int is_elf_file(int fd, const char *filename)
 {
 	Elf64_Ehdr header;
 
 	/* if bad reading */
 	if (read(fd, &header, sizeof(header)) != sizeof(header))
-		exit_error("Error reading ELF header%s\n", "");
+		exit_error("Error: can't read ELF header in file %s\n", filename);
 
 	/* check if ELF file */
 	if (memcmp(header.e_ident, ELFMAG, SELFMAG) != 0)
@@ -209,17 +209,20 @@ int main(int argc, char *argv[])
 	const char *filename;
 
 	if (argc != 2)
-		exit_error("Usage: error wrong number of args%s\n", "");
+	{
+		fprintf(stderr, "Usage: error wrong number of args\n");
+		exit(98);
+	}
 
 	filename = argv[1];
 	fd = open(filename, O_RDONLY);
 
 	if (fd == -1) /* if file opening fails */
-		exit_error("Error opening file %s\n", filename);
+		exit_error("Error: can't open file %s\n", filename);
 
 	/* if returns 0 (not elf file) */
-	if (!is_elf_file(fd))
-		exit_error("Not an ELF file%s\n", "");
+	if (!is_elf_file(fd, filename))
+		exit_error("Error: File %s not an ELF file\n", filename);
 
 	/* print header info */
 	print_elf_header(filename);
