@@ -13,6 +13,98 @@ void exit_error(const char *message)
 }
 
 /**
+ * get_elf_class - get string representation of ELF class
+ * @elf_class: character to use to get class
+ *
+ * Return: string representation of the class
+ */
+const char *get_elf_class(unsigned char elf_class)
+{
+	switch (elf_class)
+	{
+		case ELFCLASSNONE:
+			return ("none");
+		case ELFCLASS32:
+			return ("ELF32");
+		case ELFCLASS64:
+			return ("ELF64");
+		default:
+			return ("unknown");
+	}
+}
+
+/**
+ * get_elf_data - get string representation of data
+ * format (Endianness)
+ * @data: character to use to check endianness
+ *
+ * Return: string representation of endianness
+ */
+const char *get_elf_data(unsigned char data)
+{
+	switch (data)
+	{
+		case ELFDATA2LSB:
+			return ("2's complement, little endian");
+		case ELFDATA2MSB:
+			return ("2's complement, big endian");
+		default:
+			return ("unknown");
+	}
+}
+
+
+/**
+ * get_elf_abi_version - get string representation of OS/ABI version
+ * @osabi: the osabi value to use
+ *
+ * Return: string representation of the osabi value
+ */
+const char *get_elf_abi_version(unsigned char osabi)
+{
+	switch (osabi)
+	{
+		case ELFOSABI_SYSV:
+			return ("UNIX - System V");
+		case ELFOSABI_HPUX:
+			return ("UNIX - HP-UX");
+		case ELFOSABI_NETBSD:
+			return ("UNIX - NetBSD");
+		case ELFOSABI_LINUX:
+			return ("UNIX - Linux");
+		case ELFOSABI_SOLARIS:
+			return ("UNIX - Solaris");
+		case ELFOSABI_AIX:
+			return ("AIX");
+		case ELFOSABI_FREEBSD:
+			return ("UNIX - FreeBSD");
+		case ELFOSABI_TRU64:
+			return ("UNIX - Tru64");
+		case ELFOSABI_MODESTO:
+			return ("Novell Modesto");
+		case ELFOSABI_OPENBSD:
+			return ("OpenBSD");
+		case ELFOSABI_ARM:
+			return ("ARM");
+		case ELFOSABI_IRIX:
+			return ("UNIX - IRIX");
+		case ELFOSABI_ARM_AEABI:
+			return ("ARM AEABI");
+		case ELFOSABI_STANDALONE:
+			return ("Standalone App");
+		/*case ELFOSABI_OPENVMS:return ("OpenVMS");*/
+		/*case ELFOSABI_NSK:return ("NonStop Kernel");*/
+		/*case ELFOSABI_AROS:return ("AROS");*/
+		/*case ELFOSABI_FENIXOS:return ("Fenix OS");*/
+		/*case ELFOSABI_CLOUDABI:return ("CloudABI");*/
+		default:
+			return ("unknown");
+			/*return ("<unknown: %x>", osabi[EI_OSABI]);*/
+
+	}
+}
+
+/**
  * get_elf_type - get string representation of e_type
  * @e_type: e_type to use
  *
@@ -67,17 +159,13 @@ void print_elf_header(const char *filename)
 	}
 	printf("\n");
 	printf("  Class:			     %s\n",
-			(header.e_ident[EI_CLASS] == ELFCLASS32)
-			? "ELF32" : "ELF64");
+			get_elf_class(header.e_ident[EI_CLASS]));
 	printf("  Data:				     %s\n",
-			(header.e_ident[EI_DATA] == ELFDATA2LSB)
-			? "2's compliment, little endian"
-			: "2's compliment, big endian");
+			get_elf_data(header.e_ident[EI_DATA]));
 	printf("  Version:			     %d (current)\n",
 			header.e_ident[EI_VERSION]);
 	printf("  OS/ABI:			     %s\n",
-			(header.e_ident[EI_OSABI] == ELFOSABI_SYSV)
-			? "UNIX System V" : "Other");
+			get_elf_abi_version(header.e_ident[EI_OSABI]));
 	printf("  ABI Version:			     %d\n",
 			(header.e_ident[EI_ABIVERSION]));
 	printf("  Type:				     %s\n",
