@@ -6,9 +6,9 @@
  *
  * Return: void
  */
-void exit_error(const char *message)
+void exit_error(const char *message, const char *file)
 {
-	fprintf(stderr, "%s\n", message);
+	dprintf(STDERR_FILENO, message, file);
 	exit(98);
 }
 
@@ -142,12 +142,12 @@ void print_elf_header(const char *filename)
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-		exit_error("Error opening file");
+		exit_error("Error opening file %s\n", filename);
 
 	if (read(fd, &header, sizeof(header)) != sizeof(header))
 	{
 		close(fd);
-		exit_error("Error reading ELF header");
+		exit_error("Error reading ELF header in file %s\n", filename);
 	}
 	printf("ELF Header:\n");
 	printf("  Magic:   "); /* append the hex characters to this line */
@@ -187,7 +187,7 @@ int is_elf_file(int fd)
 
 	/* if bad reading */
 	if (read(fd, &header, sizeof(header)) != sizeof(header))
-		exit_error("Error reading ELF header");
+		exit_error("Error reading ELF header\n", "");
 
 	/* check if ELF file */
 	if (memcmp(header.e_ident, ELFMAG, SELFMAG) != 0)
@@ -209,17 +209,17 @@ int main(int argc, char *argv[])
 	const char *filename;
 
 	if (argc != 2)
-		exit_error("Usage: elf_header elf_filename");
+		exit_error("Usage: error wrong number of args\n", "");
 
 	filename = argv[1];
 	fd = open(filename, O_RDONLY);
 
 	if (fd == -1) /* if file opening fails */
-		exit_error("Error opening file");
+		exit_error("Error opening file %s\n", filename);
 
 	/* if returns 0 (not elf file) */
 	if (!is_elf_file(fd))
-		exit_error("Not an ELF file");
+		exit_error("Not an ELF file\n", "");
 
 	/* print header info */
 	print_elf_header(filename);
