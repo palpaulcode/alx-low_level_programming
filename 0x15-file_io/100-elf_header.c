@@ -187,7 +187,7 @@ int is_elf_file(int fd)
 
 	/* if bad reading */
 	if (read(fd, &header, sizeof(header)) != sizeof(header))
-		exit_error("Error reading ELF header\n", "");
+		exit_error("Error reading ELF header%s\n", "");
 
 	/* check if ELF file */
 	if (memcmp(header.e_ident, ELFMAG, SELFMAG) != 0)
@@ -209,7 +209,7 @@ int main(int argc, char *argv[])
 	const char *filename;
 
 	if (argc != 2)
-		exit_error("Usage: error wrong number of args\n", "");
+		exit_error("Usage: error wrong number of args%s\n", "");
 
 	filename = argv[1];
 	fd = open(filename, O_RDONLY);
@@ -219,7 +219,7 @@ int main(int argc, char *argv[])
 
 	/* if returns 0 (not elf file) */
 	if (!is_elf_file(fd))
-		exit_error("Not an ELF file\n", "");
+		exit_error("Not an ELF file%s\n", "");
 
 	/* print header info */
 	print_elf_header(filename);
