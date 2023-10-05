@@ -3,6 +3,7 @@
 /**
  * exit_error - print error message and exit with status code 98
  * @message: error message to print
+ * @file: path to file
  *
  * Return: void
  */
@@ -22,14 +23,14 @@ const char *get_elf_class(unsigned char elf_class)
 {
 	switch (elf_class)
 	{
-		case ELFCLASSNONE:
-			return ("none");
+		/*case ELFCLASSNONE:return ("none");*/
 		case ELFCLASS32:
 			return ("ELF32");
 		case ELFCLASS64:
 			return ("ELF64");
+		/*default:return ("unknown");*/
 		default:
-			return ("unknown");
+			return ("none");
 	}
 }
 
