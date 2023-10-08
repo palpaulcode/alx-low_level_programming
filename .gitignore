@@ -85,6 +85,9 @@ _putchar.c
 # ignore test  directory
 0x15-file_io/test
 
+# ignore test directory in directory 0x16-simple_shell
+0x16-simple_shell/test
+
 # if, for example, you ignore all .md files as below.md
 .md
 
