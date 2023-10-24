@@ -5,6 +5,9 @@
 *.s
 *.o
 
+# ignore directory test test
+test
+
 # ignore _putchar used to print to standard output
 # used extensively in this C course
 _putchar.c
