@@ -14,43 +14,50 @@ void exit_error(const char *message, const char *file)
 }
 
 /**
- * get_elf_class - get string representation of ELF class
+ * get_elf_class - print string representation of ELF class
  * @elf_class: character to use to get class
  *
- * Return: string representation of the class
+ * Return: void
  */
-const char *get_elf_class(unsigned char elf_class)
+void get_elf_class(unsigned char elf_class)
 {
 	switch (elf_class)
 	{
 		case ELFCLASSNONE:
-			return ("none");
+			printf("none\n");
+			break;
 		case ELFCLASS32:
-			return ("ELF32");
+			printf("ELF32\n");
+			break;
 		case ELFCLASS64:
-			return ("ELF64");
+			printf("ELF64\n");
+			break;
 		default:
-			return ("unknown");
+			printf("<unknown: %x>\n", elf_class);
 	}
 }
 
 /**
- * get_elf_data - get string representation of data
- * format (Endianness)
+ * get_elf_data - print string representation of data format (Endianness)
  * @data: character to use to check endianness
  *
- * Return: string representation of endianness
+ * Return: void
  */
-const char *get_elf_data(unsigned char data)
+void get_elf_data(unsigned char data)
 {
 	switch (data)
 	{
+		case ELFDATANONE:
+			printf("none\n");
+			break;
 		case ELFDATA2LSB:
-			return ("2's complement, little endian");
+			printf("2's complement, little endian\n");
+			break;
 		case ELFDATA2MSB:
-			return ("2's complement, big endian");
+			printf("2's complement, big endian\n");
+			break;
 		default:
-			return ("unknown");
+			printf("<unknown: %x>\n", data);
 	}
 }
 
@@ -163,10 +170,10 @@ void print_elf_header(const char *filename)
 			printf(" ");
 	}
 	printf("\n");
-	printf("  Class:			     %s\n",
-			get_elf_class(header.e_ident[EI_CLASS]));
-	printf("  Data:				     %s\n",
-			get_elf_data(header.e_ident[EI_DATA]));
+	printf("  Class:			     ");
+			get_elf_class(header.e_ident[EI_CLASS]);
+	printf("  Data:				     ");
+			get_elf_data(header.e_ident[EI_DATA]);
 	printf("  Version:			     %d (current)\n",
 			header.e_ident[EI_VERSION]);
 	printf("  OS/ABI:			     %s\n",
@@ -214,8 +221,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "Usage: error wrong number of args\n");
-		exit(98);
+		exit_error("Usage: error wrong number of args\n", "");
 	}
 
 	filename = argv[1];
