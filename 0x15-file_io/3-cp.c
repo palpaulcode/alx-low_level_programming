@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 	 */
 	fd_to = open(dest, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_to == -1)
-		error(99, "Error: Can't write to file %s\n", dest);
+		error(99, "Error: Can't write to %s\n", dest);
 
 	mem = malloc(BUFFER);
 	if (mem == NULL) /* handle malloc return */
@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
 			error(98, "Error: Can't read from file %s\n", src);
 		wr = write(fd_to, mem, rd);
 		if (wr == -1)
-			error(99, "Error: Can't write to file %s\n", dest);
+			error(99, "Error: Can't write to %s\n", dest);
 	} while (rd > 0);
 
 	free(mem);
