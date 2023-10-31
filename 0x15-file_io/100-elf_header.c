@@ -241,9 +241,9 @@ void print_elf_header(const char *filename)
 	print_elf_magic(&header); /* convert the characters to hex */
 	printf("  Class:                             ");
 			get_elf_class(header.e_ident[EI_CLASS]);
-	printf("  Data:                             ");
+	printf("  Data:                              ");
 			get_elf_data(header.e_ident[EI_DATA]);
-	printf("  Version:                             ");
+	printf("  Version:                           ");
 			print_version(header.e_ident[EI_VERSION]);
 	printf("  OS/ABI:                            ");
 			get_elf_abi_version(header.e_ident[EI_OSABI]);
