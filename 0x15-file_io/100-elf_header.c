@@ -239,19 +239,19 @@ void print_elf_header(const char *filename)
 	printf("ELF Header:\n");
 	printf("  Magic:   "); /* append the hex characters to this line */
 	print_elf_magic(&header); /* convert the characters to hex */
-	printf("  Class:			     ");
+	printf("  Class:                             ");
 			get_elf_class(header.e_ident[EI_CLASS]);
-	printf("  Data:				     ");
+	printf("  Data:                             ");
 			get_elf_data(header.e_ident[EI_DATA]);
-	printf("  Version:			     ");
+	printf("  Version:                             ");
 			print_version(header.e_ident[EI_VERSION]);
-	printf("  OS/ABI:			     ");
+	printf("  OS/ABI:                            ");
 			get_elf_abi_version(header.e_ident[EI_OSABI]);
-	printf("  ABI Version:			     %d\n",
+	printf("  ABI Version:                       %d\n",
 			(header.e_ident[EI_ABIVERSION]));
-	printf("  Type:				     ");
+	printf("  Type:                              ");
 			get_elf_type(header.e_type);
-	printf("  Entry point address:		     ");
+	printf("  Entry point address:               ");
 	print_entry_point_address(header.e_entry, header.e_ident[EI_DATA]);
 
 	close(fd);
