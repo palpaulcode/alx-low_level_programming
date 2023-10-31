@@ -93,7 +93,7 @@ void get_elf_abi_version(unsigned char osabi)
 {
 	switch (osabi)
 	{
-		case ELFOSABI_SYSV:
+		case ELFOSABI_NONE:
 			printf("UNIX - System V\n");
 			break;
 		case ELFOSABI_HPUX:
@@ -127,7 +127,8 @@ void get_elf_abi_version(unsigned char osabi)
 			printf("Standalone App\n");
 			break;
 		default:
-			printf("<unknown: %x>", osabi);
+			printf("\n");
+			/*printf("<unknown: %x>\n", osabi);*/
 	}
 }
 		/*case ELFOSABI_AIX:printf("AIX\n");break;*/
