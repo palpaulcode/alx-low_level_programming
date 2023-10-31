@@ -165,6 +165,32 @@ void get_elf_type(Elf64_Half e_type)
 }
 
 /**
+ * print_entry_point_address - print entry point address of the ELF header file
+ * @entry_point: the ELF header entry point address
+ * @data: the ELF class
+ *
+ * Return: void
+ */
+void print_entry_point_address(Elf64_Addr entry_point, unsigned char data)
+{
+	if (data == ELFDATA2MSB)
+	{
+		entry_point = ((entry_point << 8) & 0xFF00FF00) |
+			((entry_point >> 8) & 0xFF00FF);
+		entry_point = (entry_point << 16) | (entry_point >> 16);
+	}
+
+	if (data == ELFCLASS32)
+	{
+		printf("%#x\n", (unsigned int)entry_point);
+	}
+	else
+	{
+		printf("%#lx\n", entry_point);
+	}
+}
+
+/**
  * print_elf_header - prints elf header
  * @filename: name of file to use
  *
@@ -203,8 +229,9 @@ void print_elf_header(const char *filename)
 			(header.e_ident[EI_ABIVERSION]));
 	printf("  Type:				     ");
 			get_elf_type(header.e_type);
-	printf("  Entry point address:		     Ox%lx\n",
-			header.e_entry);
+	printf("  Entry point address:		     ");
+	print_entry_point_address(header.e_entry, header.e_ident[EI_DATA]);
+
 	close(fd);
 }
 
