@@ -192,6 +192,27 @@ void print_entry_point_address(unsigned long int entry_point,
 }
 
 /**
+ * print_version - print version information
+ * @version: value of version to print
+ *
+ * Return: void
+ */
+void print_version(unsigned char version)
+{
+	printf("%d", version);
+
+	switch (version)
+	{
+		case EV_CURRENT:
+			printf(" (current)\n");
+			break;
+		default:
+			printf("\n");
+			break;
+	}
+}
+
+/**
  * print_elf_header - prints elf header
  * @filename: name of file to use
  *
@@ -222,8 +243,11 @@ void print_elf_header(const char *filename)
 			get_elf_class(header.e_ident[EI_CLASS]);
 	printf("  Data:				     ");
 			get_elf_data(header.e_ident[EI_DATA]);
-	printf("  Version:			     %d (current)\n",
-			header.e_ident[EI_VERSION]);
+	/**
+	* printf("  Version:%d (current)\n",header.e_ident[EI_VERSION]);
+	*/
+	printf("  Version:			     ");
+			print_version(header.e_ident[EI_VERSION]);
 	printf("  OS/ABI:			     ");
 			get_elf_abi_version(header.e_ident[EI_OSABI]);
 	printf("  ABI Version:			     %d\n",
