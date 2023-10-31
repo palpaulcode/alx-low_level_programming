@@ -108,17 +108,8 @@ void get_elf_abi_version(unsigned char osabi)
 		case ELFOSABI_SOLARIS:
 			printf("UNIX - Solaris\n");
 			break;
-		case ELFOSABI_AIX:
-			printf("AIX\n");
-			break;
 		case ELFOSABI_FREEBSD:
 			printf("UNIX - FreeBSD\n");
-			break;
-		case ELFOSABI_TRU64:
-			printf("UNIX - Tru64\n");
-			break;
-		case ELFOSABI_MODESTO:
-			printf("Novell Modesto\n");
 			break;
 		case ELFOSABI_OPENBSD:
 			printf("OpenBSD\n");
@@ -135,15 +126,13 @@ void get_elf_abi_version(unsigned char osabi)
 		case ELFOSABI_STANDALONE:
 			printf("Standalone App\n");
 			break;
-		/*case ELFOSABI_OPENVMS:return ("OpenVMS");*/
-		/*case ELFOSABI_NSK:return ("NonStop Kernel");*/
-		/*case ELFOSABI_AROS:return ("AROS");*/
-		/*case ELFOSABI_FENIXOS:return ("Fenix OS");*/
-		/*case ELFOSABI_CLOUDABI:return ("CloudABI");*/
 		default:
 			printf("<unknown: %x>", osabi);
 	}
 }
+		/*case ELFOSABI_AIX:printf("AIX\n");break;*/
+		/*case ELFOSABI_TRU64:printf("UNIX - Tru64\n");break;*/
+		/*case ELFOSABI_MODESTO:printf("Novell Modesto\n");break;*/
 
 /**
  * get_elf_type - print string representation of e_type
