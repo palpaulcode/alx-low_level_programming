@@ -230,9 +230,11 @@ void print_elf_header(const char *filename)
 			(header.e_ident[EI_ABIVERSION]));
 	printf("  Type:				     ");
 			get_elf_type(header.e_type);
-	printf("  Entry point address:		     ");
-	print_entry_point_address(header.e_entry, header.e_ident[EI_DATA]);
-
+	printf("  Entry point address:		     0x%lx\n", header.e_entry);
+	/**
+	 * printf("  Entry point address:		     ");
+	 * print_entry_point_address(header.e_entry, header.e_ident[EI_DATA]);
+	 */
 	close(fd);
 }
 
