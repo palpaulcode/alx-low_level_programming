@@ -231,7 +231,7 @@ void print_elf_header(const char *filename)
 	printf("  Type:				     ");
 			get_elf_type(header.e_type);
 	printf("  Entry point address:		     ");
-	print_entry_point_address(header->e_entry, header.e_ident[EI_DATA]);
+	print_entry_point_address(header.e_entry, header.e_ident[EI_DATA]);
 
 	close(fd);
 }
