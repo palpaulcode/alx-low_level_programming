@@ -243,9 +243,6 @@ void print_elf_header(const char *filename)
 			get_elf_class(header.e_ident[EI_CLASS]);
 	printf("  Data:				     ");
 			get_elf_data(header.e_ident[EI_DATA]);
-	/**
-	* printf("  Version:%d (current)\n",header.e_ident[EI_VERSION]);
-	*/
 	printf("  Version:			     ");
 			print_version(header.e_ident[EI_VERSION]);
 	printf("  OS/ABI:			     ");
@@ -254,13 +251,17 @@ void print_elf_header(const char *filename)
 			(header.e_ident[EI_ABIVERSION]));
 	printf("  Type:				     ");
 			get_elf_type(header.e_type);
-	printf("  Entry point address:		     0x%lx\n", header.e_entry);
-	/**
-	 * printf("  Entry point address:		     ");
-	 * print_entry_point_address(header.e_entry, header.e_ident[EI_DATA]);
-	 */
+	printf("  Entry point address:		     ");
+	print_entry_point_address(header.e_entry, header.e_ident[EI_DATA]);
+
 	close(fd);
 }
+	/**
+	 * printf("  Version:                                %d (current)\n",
+	 *		header.e_ident[EI_VERSION]);
+	 * printf("  Entry point address:		     0x%lx\n",
+	 *		header.e_entry);
+	 */
 
 /**
  * is_elf_file - checks if file is elf file
