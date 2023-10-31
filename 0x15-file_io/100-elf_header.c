@@ -171,7 +171,8 @@ void get_elf_type(Elf64_Half e_type)
  *
  * Return: void
  */
-void print_entry_point_address(unsigned long int entry_point, unsigned char data)
+void print_entry_point_address(unsigned long int entry_point,
+		unsigned char data)
 {
 	if (data == ELFDATA2MSB)
 	{
@@ -230,7 +231,7 @@ void print_elf_header(const char *filename)
 	printf("  Type:				     ");
 			get_elf_type(header.e_type);
 	printf("  Entry point address:		     ");
-	print_entry_point_address(header.e_entry, header.e_ident[EI_DATA]);
+	print_entry_point_address(header->e_entry, header.e_ident[EI_DATA]);
 
 	close(fd);
 }
