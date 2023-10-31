@@ -14,6 +14,27 @@ void exit_error(const char *message, const char *file)
 }
 
 /**
+ * print_elf_magic - print magic value representations
+ * @header: the elf file header to use
+ *
+ * Return: void
+ */
+void print_elf_magic(const Elf64_Ehdr *header)
+{
+	int i;
+
+	for (i = 0; i < EI_NIDENT; i++)
+	{
+		printf("%02x", header->e_ident[i]);
+		if (i < (EI_NIDENT - 1))
+			printf(" ");
+	}
+
+	printf("\n");
+}
+
+
+/**
  * get_elf_class - print string representation of ELF class
  * @elf_class: character to use to get class
  *
@@ -63,77 +84,94 @@ void get_elf_data(unsigned char data)
 
 
 /**
- * get_elf_abi_version - get string representation of OS/ABI version
+ * get_elf_abi_version - print string representation of OS/ABI version
  * @osabi: the osabi value to use
  *
- * Return: string representation of the osabi value
+ * Return: void
  */
-const char *get_elf_abi_version(unsigned char osabi)
+void get_elf_abi_version(unsigned char osabi)
 {
 	switch (osabi)
 	{
 		case ELFOSABI_SYSV:
-			return ("UNIX - System V");
+			printf("UNIX - System V\n");
+			break;
 		case ELFOSABI_HPUX:
-			return ("UNIX - HP-UX");
+			printf("UNIX - HP-UX\n");
+			break;
 		case ELFOSABI_NETBSD:
-			return ("UNIX - NetBSD");
+			printf("UNIX - NetBSD\n");
+			break;
 		case ELFOSABI_LINUX:
-			return ("UNIX - Linux");
+			printf("UNIX - Linux\n");
+			break;
 		case ELFOSABI_SOLARIS:
-			return ("UNIX - Solaris");
+			printf("UNIX - Solaris\n");
+			break;
 		case ELFOSABI_AIX:
-			return ("AIX");
+			printf("AIX\n");
+			break;
 		case ELFOSABI_FREEBSD:
-			return ("UNIX - FreeBSD");
+			printf("UNIX - FreeBSD\n");
+			break;
 		case ELFOSABI_TRU64:
-			return ("UNIX - Tru64");
+			printf("UNIX - Tru64\n");
+			break;
 		case ELFOSABI_MODESTO:
-			return ("Novell Modesto");
+			printf("Novell Modesto\n");
+			break;
 		case ELFOSABI_OPENBSD:
-			return ("OpenBSD");
+			printf("OpenBSD\n");
+			break;
 		case ELFOSABI_ARM:
-			return ("ARM");
+			printf("ARM\n");
+			break;
 		case ELFOSABI_IRIX:
-			return ("UNIX - IRIX");
+			printf("UNIX - IRIX\n");
+			break;
 		case ELFOSABI_ARM_AEABI:
-			return ("ARM AEABI");
+			printf("ARM AEABI\n");
+			break;
 		case ELFOSABI_STANDALONE:
-			return ("Standalone App");
+			printf("Standalone App\n");
+			break;
 		/*case ELFOSABI_OPENVMS:return ("OpenVMS");*/
 		/*case ELFOSABI_NSK:return ("NonStop Kernel");*/
 		/*case ELFOSABI_AROS:return ("AROS");*/
 		/*case ELFOSABI_FENIXOS:return ("Fenix OS");*/
 		/*case ELFOSABI_CLOUDABI:return ("CloudABI");*/
 		default:
-			return ("unknown");
-			/*return ("<unknown: %x>", osabi[EI_OSABI]);*/
-
+			printf("<unknown: %x>", osabi);
 	}
 }
 
 /**
- * get_elf_type - get string representation of e_type
+ * get_elf_type - print string representation of e_type
  * @e_type: e_type to use
  *
- * Return: String representation of e_type;
+ * Return: void
  */
-const char *get_elf_type(Elf64_Half e_type)
+void get_elf_type(Elf64_Half e_type)
 {
 	switch (e_type)
 	{
 		case ET_NONE:
-			return ("NONE (Unknown type)");
+			printf("NONE (Unknown type)\n");
+			break;
 		case ET_REL:
-			return ("REL (Relocatable file)");
+			printf("REL (Relocatable file)\n");
+			break;
 		case ET_EXEC:
-			return ("EXEC (Executable file)");
+			printf("EXEC (Executable file)\n");
+			break;
 		case ET_DYN:
-			return ("DYN (Shared object file)");
+			printf("DYN (Shared object file)\n");
+			break;
 		case ET_CORE:
-			return ("CORE (Core file)");
+			printf("CORE (Core file)\n");
+			break;
 		default:
-			return ("Unknown");
+			printf("<unknown: %x>\n", e_type);
 	}
 }
 
@@ -145,7 +183,7 @@ const char *get_elf_type(Elf64_Half e_type)
  */
 void print_elf_header(const char *filename)
 {
-	int fd, i;
+	int fd/*, i*/;
 	Elf64_Ehdr header;
 
 	fd = open(filename, O_RDONLY);
@@ -163,25 +201,19 @@ void print_elf_header(const char *filename)
 	}
 	printf("ELF Header:\n");
 	printf("  Magic:   "); /* append the hex characters to this line */
-	for (i = 0; i < EI_NIDENT; i++) /* convert the characters to hex */
-	{
-		printf("%02x", header.e_ident[i]);
-		if (i < (EI_NIDENT - 1))
-			printf(" ");
-	}
-	printf("\n");
+	print_elf_magic(&header); /* convert the characters to hex */
 	printf("  Class:			     ");
 			get_elf_class(header.e_ident[EI_CLASS]);
 	printf("  Data:				     ");
 			get_elf_data(header.e_ident[EI_DATA]);
 	printf("  Version:			     %d (current)\n",
 			header.e_ident[EI_VERSION]);
-	printf("  OS/ABI:			     %s\n",
-			get_elf_abi_version(header.e_ident[EI_OSABI]));
+	printf("  OS/ABI:			     ");
+			get_elf_abi_version(header.e_ident[EI_OSABI]);
 	printf("  ABI Version:			     %d\n",
 			(header.e_ident[EI_ABIVERSION]));
-	printf("  Type:				     %s\n",
-			get_elf_type(header.e_type));
+	printf("  Type:				     ");
+			get_elf_type(header.e_type);
 	printf("  Entry point address:		     Ox%lx\n",
 			header.e_entry);
 	close(fd);
