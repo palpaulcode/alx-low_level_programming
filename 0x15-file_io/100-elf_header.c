@@ -171,7 +171,7 @@ void get_elf_type(Elf64_Half e_type)
  *
  * Return: void
  */
-void print_entry_point_address(Elf64_Addr entry_point, unsigned char data)
+void print_entry_point_address(unsigned long int entry_point, unsigned char data)
 {
 	if (data == ELFDATA2MSB)
 	{
